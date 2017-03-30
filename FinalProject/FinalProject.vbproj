@@ -79,6 +79,12 @@
     <Compile Include="Input.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Input2.Designer.vb">
+      <DependentUpon>Input2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Input2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Input.resx">
       <DependentUpon>Input.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Input2.resx">
+      <DependentUpon>Input2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

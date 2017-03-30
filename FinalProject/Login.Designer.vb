@@ -33,7 +33,7 @@ Partial Class Login
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(76, 21)
+        Me.Label1.Location = New System.Drawing.Point(112, 21)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(100, 23)
         Me.Label1.TabIndex = 0
@@ -43,9 +43,9 @@ Partial Class Login
         'txtUser
         '
         Me.txtUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUser.Location = New System.Drawing.Point(238, 17)
+        Me.txtUser.Location = New System.Drawing.Point(218, 17)
         Me.txtUser.Name = "txtUser"
-        Me.txtUser.Size = New System.Drawing.Size(115, 27)
+        Me.txtUser.Size = New System.Drawing.Size(135, 27)
         Me.txtUser.TabIndex = 1
         '
         'btnLog
@@ -69,19 +69,19 @@ Partial Class Login
         'Label2
         '
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(76, 63)
+        Me.Label2.Location = New System.Drawing.Point(112, 63)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(100, 23)
         Me.Label2.TabIndex = 0
-        Me.Label2.Text = "PassWord"
+        Me.Label2.Text = "PassWord:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'txtPass
         '
         Me.txtPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPass.Location = New System.Drawing.Point(238, 59)
+        Me.txtPass.Location = New System.Drawing.Point(218, 59)
         Me.txtPass.Name = "txtPass"
-        Me.txtPass.Size = New System.Drawing.Size(115, 27)
+        Me.txtPass.Size = New System.Drawing.Size(135, 27)
         Me.txtPass.TabIndex = 1
         '
         'Login
