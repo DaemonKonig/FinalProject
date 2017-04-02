@@ -73,6 +73,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CookiesData.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CookiesData.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Input.Designer.vb">
       <DependentUpon>Input.vb</DependentUpon>
     </Compile>
@@ -162,6 +167,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="CookiesData.xsc">
+      <DependentUpon>CookiesData.xsd</DependentUpon>
+    </None>
+    <None Include="CookiesData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CookiesData.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="CookiesData.xss">
+      <DependentUpon>CookiesData.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
