@@ -22,52 +22,52 @@ Partial Class Modify
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.txtClose = New System.Windows.Forms.Button()
+        Me.txtDate = New System.Windows.Forms.TextBox()
+        Me.lblModMssg = New System.Windows.Forms.Label()
+        Me.cboTrpr = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnSub = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'Button1
+        'txtClose
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(254, 217)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 31)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Close"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.txtClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtClose.Location = New System.Drawing.Point(254, 217)
+        Me.txtClose.Name = "txtClose"
+        Me.txtClose.Size = New System.Drawing.Size(75, 31)
+        Me.txtClose.TabIndex = 0
+        Me.txtClose.Text = "Close"
+        Me.txtClose.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txtDate
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(154, 156)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 27)
-        Me.TextBox1.TabIndex = 1
+        Me.txtDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDate.Location = New System.Drawing.Point(154, 156)
+        Me.txtDate.Name = "txtDate"
+        Me.txtDate.Size = New System.Drawing.Size(100, 27)
+        Me.txtDate.TabIndex = 1
         '
-        'Label1
+        'lblModMssg
         '
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(399, 61)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Please select Troopers Name and enter the date of submission. Then click Submit t" &
+        Me.lblModMssg.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblModMssg.Location = New System.Drawing.Point(12, 9)
+        Me.lblModMssg.Name = "lblModMssg"
+        Me.lblModMssg.Size = New System.Drawing.Size(399, 61)
+        Me.lblModMssg.TabIndex = 2
+        Me.lblModMssg.Text = "Please select Troopers Name and enter the date of submission. Then click Submit t" &
     "o input the correct information."
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblModMssg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'ComboBox1
+        'cboTrpr
         '
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(152, 99)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 28)
-        Me.ComboBox1.TabIndex = 3
+        Me.cboTrpr.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboTrpr.FormattingEnabled = True
+        Me.cboTrpr.Location = New System.Drawing.Point(152, 99)
+        Me.cboTrpr.Name = "cboTrpr"
+        Me.cboTrpr.Size = New System.Drawing.Size(121, 28)
+        Me.cboTrpr.TabIndex = 3
         '
         'Label2
         '
@@ -80,15 +80,15 @@ Partial Class Modify
         Me.Label2.Text = "Trooper:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Button2
+        'btnSub
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(78, 217)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 31)
-        Me.Button2.TabIndex = 0
-        Me.Button2.Text = "Submit"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSub.Location = New System.Drawing.Point(78, 217)
+        Me.btnSub.Name = "btnSub"
+        Me.btnSub.Size = New System.Drawing.Size(75, 31)
+        Me.btnSub.TabIndex = 0
+        Me.btnSub.Text = "Submit"
+        Me.btnSub.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -106,13 +106,13 @@ Partial Class Modify
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(423, 275)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cboTrpr)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.lblModMssg)
+        Me.Controls.Add(Me.txtDate)
+        Me.Controls.Add(Me.btnSub)
+        Me.Controls.Add(Me.txtClose)
         Me.Name = "Modify"
         Me.Text = "Modify Cookies"
         Me.ResumeLayout(False)
@@ -120,11 +120,11 @@ Partial Class Modify
 
     End Sub
 
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents txtClose As Button
+    Friend WithEvents txtDate As TextBox
+    Friend WithEvents lblModMssg As Label
+    Friend WithEvents cboTrpr As ComboBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnSub As Button
     Friend WithEvents Label3 As Label
 End Class

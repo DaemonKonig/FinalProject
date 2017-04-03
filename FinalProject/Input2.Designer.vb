@@ -23,13 +23,13 @@ Partial Class Input2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtZip = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtDate = New System.Windows.Forms.TextBox()
+        Me.btnSub = New System.Windows.Forms.Button()
+        Me.btnClr = New System.Windows.Forms.Button()
+        Me.btnCncl = New System.Windows.Forms.Button()
+        Me.txtCom = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
@@ -44,13 +44,13 @@ Partial Class Input2
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "ZipCode:"
         '
-        'TextBox1
+        'txtZip
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(122, 76)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(121, 27)
-        Me.TextBox1.TabIndex = 1
+        Me.txtZip.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtZip.Location = New System.Drawing.Point(122, 76)
+        Me.txtZip.Name = "txtZip"
+        Me.txtZip.Size = New System.Drawing.Size(121, 27)
+        Me.txtZip.TabIndex = 1
         '
         'Label2
         '
@@ -62,53 +62,53 @@ Partial Class Input2
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Date:"
         '
-        'TextBox2
+        'txtDate
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(122, 119)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(121, 27)
-        Me.TextBox2.TabIndex = 1
+        Me.txtDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDate.Location = New System.Drawing.Point(122, 119)
+        Me.txtDate.Name = "txtDate"
+        Me.txtDate.Size = New System.Drawing.Size(121, 27)
+        Me.txtDate.TabIndex = 1
         '
-        'Button1
+        'btnSub
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(29, 330)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 39)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Submit"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSub.Location = New System.Drawing.Point(29, 330)
+        Me.btnSub.Name = "btnSub"
+        Me.btnSub.Size = New System.Drawing.Size(75, 39)
+        Me.btnSub.TabIndex = 2
+        Me.btnSub.Text = "Submit"
+        Me.btnSub.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnClr
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(133, 330)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 39)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Clear"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnClr.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClr.Location = New System.Drawing.Point(133, 330)
+        Me.btnClr.Name = "btnClr"
+        Me.btnClr.Size = New System.Drawing.Size(75, 39)
+        Me.btnClr.TabIndex = 2
+        Me.btnClr.Text = "Clear"
+        Me.btnClr.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnCncl
         '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(238, 330)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 39)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Cancel"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnCncl.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCncl.Location = New System.Drawing.Point(238, 330)
+        Me.btnCncl.Name = "btnCncl"
+        Me.btnCncl.Size = New System.Drawing.Size(75, 39)
+        Me.btnCncl.TabIndex = 2
+        Me.btnCncl.Text = "Cancel"
+        Me.btnCncl.UseVisualStyleBackColor = True
         '
-        'TextBox3
+        'txtCom
         '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(16, 192)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox3.Size = New System.Drawing.Size(315, 132)
-        Me.TextBox3.TabIndex = 1
+        Me.txtCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCom.Location = New System.Drawing.Point(16, 192)
+        Me.txtCom.Multiline = True
+        Me.txtCom.Name = "txtCom"
+        Me.txtCom.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtCom.Size = New System.Drawing.Size(315, 132)
+        Me.txtCom.TabIndex = 1
         '
         'Label3
         '
@@ -135,14 +135,14 @@ Partial Class Input2
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(365, 396)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.btnCncl)
+        Me.Controls.Add(Me.btnClr)
+        Me.Controls.Add(Me.btnSub)
+        Me.Controls.Add(Me.txtCom)
+        Me.Controls.Add(Me.txtDate)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtZip)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Input2"
@@ -153,13 +153,13 @@ Partial Class Input2
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtZip As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtDate As TextBox
+    Friend WithEvents btnSub As Button
+    Friend WithEvents btnClr As Button
+    Friend WithEvents btnCncl As Button
+    Friend WithEvents txtCom As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
 End Class

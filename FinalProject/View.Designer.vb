@@ -22,35 +22,35 @@ Partial Class View
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.dvgCookies = New System.Windows.Forms.DataGridView()
+        Me.btnSearch = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cboSrchFor = New System.Windows.Forms.TextBox()
+        Me.cboSrchBy = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btnClose = New System.Windows.Forms.Button()
+        Me.btnCompTo = New System.Windows.Forms.Button()
+        CType(Me.dvgCookies, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'dvgCookies
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 62)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(779, 379)
-        Me.DataGridView1.TabIndex = 0
+        Me.dvgCookies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dvgCookies.Location = New System.Drawing.Point(12, 62)
+        Me.dvgCookies.Name = "dvgCookies"
+        Me.dvgCookies.RowTemplate.Height = 24
+        Me.dvgCookies.Size = New System.Drawing.Size(779, 379)
+        Me.dvgCookies.TabIndex = 0
         '
-        'Button1
+        'btnSearch
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(538, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 30)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Search"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.Location = New System.Drawing.Point(538, 12)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(75, 30)
+        Me.btnSearch.TabIndex = 1
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -62,22 +62,22 @@ Partial Class View
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Search by:"
         '
-        'TextBox1
+        'cboSrchFor
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(409, 14)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(123, 27)
-        Me.TextBox1.TabIndex = 3
+        Me.cboSrchFor.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSrchFor.Location = New System.Drawing.Point(409, 14)
+        Me.cboSrchFor.Name = "cboSrchFor"
+        Me.cboSrchFor.Size = New System.Drawing.Size(123, 27)
+        Me.cboSrchFor.TabIndex = 3
         '
-        'ComboBox1
+        'cboSrchBy
         '
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(242, 14)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 28)
-        Me.ComboBox1.TabIndex = 4
+        Me.cboSrchBy.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSrchBy.FormattingEnabled = True
+        Me.cboSrchBy.Location = New System.Drawing.Point(242, 14)
+        Me.cboSrchBy.Name = "cboSrchBy"
+        Me.cboSrchBy.Size = New System.Drawing.Size(121, 28)
+        Me.cboSrchBy.TabIndex = 4
         '
         'Label2
         '
@@ -89,53 +89,53 @@ Partial Class View
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "For"
         '
-        'Button2
+        'btnClose
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(360, 447)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 30)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Close"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.Location = New System.Drawing.Point(360, 447)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(75, 30)
+        Me.btnClose.TabIndex = 1
+        Me.btnClose.Text = "Close"
+        Me.btnClose.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnCompTo
         '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(658, 11)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(118, 30)
-        Me.Button3.TabIndex = 1
-        Me.Button3.Text = "Compare To"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnCompTo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCompTo.Location = New System.Drawing.Point(658, 11)
+        Me.btnCompTo.Name = "btnCompTo"
+        Me.btnCompTo.Size = New System.Drawing.Size(118, 30)
+        Me.btnCompTo.TabIndex = 1
+        Me.btnCompTo.Text = "Compare To"
+        Me.btnCompTo.UseVisualStyleBackColor = True
         '
         'View
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(803, 489)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.cboSrchBy)
+        Me.Controls.Add(Me.cboSrchFor)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.btnClose)
+        Me.Controls.Add(Me.btnCompTo)
+        Me.Controls.Add(Me.btnSearch)
+        Me.Controls.Add(Me.dvgCookies)
         Me.Name = "View"
         Me.Text = "Cookie Sheets"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dvgCookies, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button1 As Button
+    Friend WithEvents dvgCookies As DataGridView
+    Friend WithEvents btnSearch As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cboSrchFor As TextBox
+    Friend WithEvents cboSrchBy As ComboBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnClose As Button
+    Friend WithEvents btnCompTo As Button
 End Class

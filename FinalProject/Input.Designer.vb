@@ -22,31 +22,31 @@ Partial Class Input
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnSub = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtMints = New System.Windows.Forms.TextBox()
+        Me.btnCncl = New System.Windows.Forms.Button()
+        Me.txtBread = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtCaramel = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtPatties = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.btnClr = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Button1
+        'btnSub
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(34, 281)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(87, 38)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Submit"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSub.Location = New System.Drawing.Point(34, 281)
+        Me.btnSub.Name = "btnSub"
+        Me.btnSub.Size = New System.Drawing.Size(87, 38)
+        Me.btnSub.TabIndex = 0
+        Me.btnSub.Text = "Submit"
+        Me.btnSub.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -59,31 +59,31 @@ Partial Class Input
         Me.Label1.Text = "Thin Mints:"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox1
+        'txtMints
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(192, 73)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(158, 27)
-        Me.TextBox1.TabIndex = 2
+        Me.txtMints.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMints.Location = New System.Drawing.Point(192, 73)
+        Me.txtMints.Name = "txtMints"
+        Me.txtMints.Size = New System.Drawing.Size(158, 27)
+        Me.txtMints.TabIndex = 2
         '
-        'Button2
+        'btnCncl
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(285, 281)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(87, 38)
-        Me.Button2.TabIndex = 0
-        Me.Button2.Text = "Cancel"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnCncl.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCncl.Location = New System.Drawing.Point(285, 281)
+        Me.btnCncl.Name = "btnCncl"
+        Me.btnCncl.Size = New System.Drawing.Size(87, 38)
+        Me.btnCncl.TabIndex = 0
+        Me.btnCncl.Text = "Cancel"
+        Me.btnCncl.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'txtBread
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(192, 212)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(158, 27)
-        Me.TextBox2.TabIndex = 2
+        Me.txtBread.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBread.Location = New System.Drawing.Point(192, 212)
+        Me.txtBread.Name = "txtBread"
+        Me.txtBread.Size = New System.Drawing.Size(158, 27)
+        Me.txtBread.TabIndex = 2
         '
         'Label2
         '
@@ -125,13 +125,13 @@ Partial Class Input
         Me.Label5.Text = "Caramel deLites:"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox3
+        'txtCaramel
         '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(192, 123)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(158, 27)
-        Me.TextBox3.TabIndex = 2
+        Me.txtCaramel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCaramel.Location = New System.Drawing.Point(192, 123)
+        Me.txtCaramel.Name = "txtCaramel"
+        Me.txtCaramel.Size = New System.Drawing.Size(158, 27)
+        Me.txtCaramel.TabIndex = 2
         '
         'Label6
         '
@@ -144,13 +144,13 @@ Partial Class Input
         Me.Label6.Text = "Peanut Butter Patties:"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox4
+        'txtPatties
         '
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(192, 171)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(158, 27)
-        Me.TextBox4.TabIndex = 2
+        Me.txtPatties.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPatties.Location = New System.Drawing.Point(192, 171)
+        Me.txtPatties.Name = "txtPatties"
+        Me.txtPatties.Size = New System.Drawing.Size(158, 27)
+        Me.txtPatties.TabIndex = 2
         '
         'Label7
         '
@@ -162,25 +162,25 @@ Partial Class Input
         Me.Label7.Text = "Please Enter the amount of each cookie sold. Then click submit"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Button5
+        'btnClr
         '
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(162, 281)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(87, 38)
-        Me.Button5.TabIndex = 0
-        Me.Button5.Text = "Clear"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.btnClr.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClr.Location = New System.Drawing.Point(162, 281)
+        Me.btnClr.Name = "btnClr"
+        Me.btnClr.Size = New System.Drawing.Size(87, 38)
+        Me.btnClr.TabIndex = 0
+        Me.btnClr.Text = "Clear"
+        Me.btnClr.UseVisualStyleBackColor = True
         '
         'Input
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(412, 355)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtBread)
+        Me.Controls.Add(Me.txtPatties)
+        Me.Controls.Add(Me.txtCaramel)
+        Me.Controls.Add(Me.txtMints)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label3)
@@ -188,9 +188,9 @@ Partial Class Input
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button5)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnClr)
+        Me.Controls.Add(Me.btnCncl)
+        Me.Controls.Add(Me.btnSub)
         Me.Name = "Input"
         Me.Text = "New Cookie Sheet"
         Me.ResumeLayout(False)
@@ -198,18 +198,18 @@ Partial Class Input
 
     End Sub
 
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnSub As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtMints As TextBox
+    Friend WithEvents btnCncl As Button
+    Friend WithEvents txtBread As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtCaramel As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents txtPatties As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents Button5 As Button
+    Friend WithEvents btnClr As Button
 End Class

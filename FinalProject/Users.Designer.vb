@@ -23,13 +23,13 @@ Partial Class Users
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.btnSub = New System.Windows.Forms.Button()
+        Me.txtName = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtPass = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.txtPhone = New System.Windows.Forms.TextBox()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -42,23 +42,23 @@ Partial Class Users
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Name:"
         '
-        'Button1
+        'btnSub
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(110, 218)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 29)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Submit"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSub.Location = New System.Drawing.Point(110, 218)
+        Me.btnSub.Name = "btnSub"
+        Me.btnSub.Size = New System.Drawing.Size(75, 29)
+        Me.btnSub.TabIndex = 1
+        Me.btnSub.Text = "Submit"
+        Me.btnSub.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txtName
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(170, 54)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 27)
-        Me.TextBox1.TabIndex = 2
+        Me.txtName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtName.Location = New System.Drawing.Point(170, 54)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(100, 27)
+        Me.txtName.TabIndex = 2
         '
         'Label4
         '
@@ -70,13 +70,13 @@ Partial Class Users
         Me.Label4.TabIndex = 0
         Me.Label4.Text = " Password:"
         '
-        'TextBox4
+        'txtPass
         '
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(170, 105)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 27)
-        Me.TextBox4.TabIndex = 2
+        Me.txtPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPass.Location = New System.Drawing.Point(170, 105)
+        Me.txtPass.Name = "txtPass"
+        Me.txtPass.Size = New System.Drawing.Size(100, 27)
+        Me.txtPass.TabIndex = 2
         '
         'Label2
         '
@@ -88,50 +88,50 @@ Partial Class Users
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Phone Number:"
         '
-        'TextBox2
+        'txtPhone
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(170, 146)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 27)
-        Me.TextBox2.TabIndex = 2
+        Me.txtPhone.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPhone.Location = New System.Drawing.Point(170, 146)
+        Me.txtPhone.Name = "txtPhone"
+        Me.txtPhone.Size = New System.Drawing.Size(100, 27)
+        Me.txtPhone.TabIndex = 2
         '
-        'Button2
+        'btnClose
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(213, 218)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 29)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Close"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.Location = New System.Drawing.Point(213, 218)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(75, 29)
+        Me.btnClose.TabIndex = 1
+        Me.btnClose.Text = "Close"
+        Me.btnClose.UseVisualStyleBackColor = True
         '
         'Users
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(402, 277)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox4)
+        Me.Controls.Add(Me.txtPhone)
+        Me.Controls.Add(Me.txtPass)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.txtName)
+        Me.Controls.Add(Me.btnClose)
+        Me.Controls.Add(Me.btnSub)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Users"
-        Me.Text = "Troop"
+        Me.Text = "Add Trooper"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents btnSub As Button
+    Friend WithEvents txtName As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents txtPass As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents txtPhone As TextBox
+    Friend WithEvents btnClose As Button
 End Class
