@@ -24,7 +24,6 @@ Partial Class Main
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.tsmFile = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmNCS = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmAddTrpr = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmClose = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmView = New System.Windows.Forms.ToolStripMenuItem()
@@ -34,6 +33,9 @@ Partial Class Main
         Me.tsmChangeCS = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmChangeTrpr = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmNCS = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmInvent = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -50,28 +52,22 @@ Partial Class Main
         '
         'tsmFile
         '
-        Me.tsmFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmNCS, Me.tsmAddTrpr, Me.tsmClose})
+        Me.tsmFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.tsmAddTrpr, Me.tsmClose})
         Me.tsmFile.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tsmFile.Name = "tsmFile"
         Me.tsmFile.Size = New System.Drawing.Size(47, 27)
         Me.tsmFile.Text = "File"
         '
-        'tsmNCS
-        '
-        Me.tsmNCS.Name = "tsmNCS"
-        Me.tsmNCS.Size = New System.Drawing.Size(225, 28)
-        Me.tsmNCS.Text = "New Cookie Sheet"
-        '
         'tsmAddTrpr
         '
         Me.tsmAddTrpr.Name = "tsmAddTrpr"
-        Me.tsmAddTrpr.Size = New System.Drawing.Size(225, 28)
+        Me.tsmAddTrpr.Size = New System.Drawing.Size(181, 28)
         Me.tsmAddTrpr.Text = "Add Trooper"
         '
         'tsmClose
         '
         Me.tsmClose.Name = "tsmClose"
-        Me.tsmClose.Size = New System.Drawing.Size(225, 28)
+        Me.tsmClose.Size = New System.Drawing.Size(181, 28)
         Me.tsmClose.Text = "Close"
         '
         'tsmView
@@ -125,6 +121,25 @@ Partial Class Main
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
+        'NewToolStripMenuItem
+        '
+        Me.NewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmNCS, Me.tsmInvent})
+        Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(181, 28)
+        Me.NewToolStripMenuItem.Text = "New"
+        '
+        'tsmNCS
+        '
+        Me.tsmNCS.Name = "tsmNCS"
+        Me.tsmNCS.Size = New System.Drawing.Size(186, 28)
+        Me.tsmNCS.Text = "Cookie Sheet"
+        '
+        'tsmInvent
+        '
+        Me.tsmInvent.Name = "tsmInvent"
+        Me.tsmInvent.Size = New System.Drawing.Size(186, 28)
+        Me.tsmInvent.Text = "Inventory"
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -146,7 +161,6 @@ Partial Class Main
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents tsmFile As ToolStripMenuItem
     Friend WithEvents tsmView As ToolStripMenuItem
-    Friend WithEvents tsmNCS As ToolStripMenuItem
     Friend WithEvents tsmAddTrpr As ToolStripMenuItem
     Friend WithEvents tsmClose As ToolStripMenuItem
     Friend WithEvents tsmCkieSht As ToolStripMenuItem
@@ -155,4 +169,7 @@ Partial Class Main
     Friend WithEvents tsmChangeCS As ToolStripMenuItem
     Friend WithEvents tsmChangeTrpr As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents NewToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents tsmNCS As ToolStripMenuItem
+    Friend WithEvents tsmInvent As ToolStripMenuItem
 End Class

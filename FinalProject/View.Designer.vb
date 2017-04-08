@@ -30,6 +30,8 @@ Partial Class View
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnCompTo = New System.Windows.Forms.Button()
+        Me.rdoSold = New System.Windows.Forms.RadioButton()
+        Me.rdoInvent = New System.Windows.Forms.RadioButton()
         CType(Me.dvgCookies, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -109,11 +111,37 @@ Partial Class View
         Me.btnCompTo.Text = "Compare To"
         Me.btnCompTo.UseVisualStyleBackColor = True
         '
+        'rdoSold
+        '
+        Me.rdoSold.AutoSize = True
+        Me.rdoSold.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdoSold.Location = New System.Drawing.Point(12, 11)
+        Me.rdoSold.Name = "rdoSold"
+        Me.rdoSold.Size = New System.Drawing.Size(128, 24)
+        Me.rdoSold.TabIndex = 5
+        Me.rdoSold.TabStop = True
+        Me.rdoSold.Text = "Cookies Sold"
+        Me.rdoSold.UseVisualStyleBackColor = True
+        '
+        'rdoInvent
+        '
+        Me.rdoInvent.AutoSize = True
+        Me.rdoInvent.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdoInvent.Location = New System.Drawing.Point(12, 35)
+        Me.rdoInvent.Name = "rdoInvent"
+        Me.rdoInvent.Size = New System.Drawing.Size(97, 24)
+        Me.rdoInvent.TabIndex = 6
+        Me.rdoInvent.TabStop = True
+        Me.rdoInvent.Text = "Inventory"
+        Me.rdoInvent.UseVisualStyleBackColor = True
+        '
         'View
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(803, 489)
+        Me.Controls.Add(Me.rdoInvent)
+        Me.Controls.Add(Me.rdoSold)
         Me.Controls.Add(Me.cboSrchBy)
         Me.Controls.Add(Me.cboSrchFor)
         Me.Controls.Add(Me.Label2)
@@ -138,4 +166,6 @@ Partial Class View
     Friend WithEvents Label2 As Label
     Friend WithEvents btnClose As Button
     Friend WithEvents btnCompTo As Button
+    Friend WithEvents rdoSold As RadioButton
+    Friend WithEvents rdoInvent As RadioButton
 End Class

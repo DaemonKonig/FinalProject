@@ -34,7 +34,7 @@ Partial Class Input
         Me.txtCaramel = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtPatties = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lblVar = New System.Windows.Forms.Label()
         Me.btnClr = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -152,15 +152,15 @@ Partial Class Input
         Me.txtPatties.Size = New System.Drawing.Size(158, 27)
         Me.txtPatties.TabIndex = 2
         '
-        'Label7
+        'lblVar
         '
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(12, -7)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(379, 83)
-        Me.Label7.TabIndex = 1
-        Me.Label7.Text = "Please Enter the amount of each cookie sold. Then click submit"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblVar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVar.Location = New System.Drawing.Point(12, -7)
+        Me.lblVar.Name = "lblVar"
+        Me.lblVar.Size = New System.Drawing.Size(379, 83)
+        Me.lblVar.TabIndex = 1
+        Me.lblVar.Text = "Please Enter the amount of each cookie sold. Then click submit"
+        Me.lblVar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnClr
         '
@@ -186,7 +186,7 @@ Partial Class Input
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.lblVar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnClr)
         Me.Controls.Add(Me.btnCncl)
@@ -210,6 +210,6 @@ Partial Class Input
     Friend WithEvents txtCaramel As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents txtPatties As TextBox
-    Friend WithEvents Label7 As Label
+    Friend WithEvents lblVar As Label
     Friend WithEvents btnClr As Button
 End Class
