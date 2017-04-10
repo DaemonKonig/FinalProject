@@ -37,12 +37,12 @@ Represents a strongly typed in-memory cache of data.
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:FinalProject.GSCDataSet.InventoryDataTable">
+<member name="T:FinalProject.GSCDataSet.CookiesDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
 </member>
-<member name="T:FinalProject.GSCDataSet.CookiesDataTable">
+<member name="T:FinalProject.GSCDataSet.InventoryDataTable">
 <summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -52,12 +52,12 @@ Represents the strongly named DataTable class.
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:FinalProject.GSCDataSet.InventoryRow">
+<member name="T:FinalProject.GSCDataSet.CookiesRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
 </member>
-<member name="T:FinalProject.GSCDataSet.CookiesRow">
+<member name="T:FinalProject.GSCDataSet.InventoryRow">
 <summary>
 Represents strongly named DataRow class.
 </summary>
@@ -67,12 +67,12 @@ Represents strongly named DataRow class.
 Row event argument class
 </summary>
 </member>
-<member name="T:FinalProject.GSCDataSet.InventoryRowChangeEvent">
+<member name="T:FinalProject.GSCDataSet.CookiesRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
 </member>
-<member name="T:FinalProject.GSCDataSet.CookiesRowChangeEvent">
+<member name="T:FinalProject.GSCDataSet.InventoryRowChangeEvent">
 <summary>
 Row event argument class
 </summary>
@@ -82,12 +82,12 @@ Row event argument class
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:FinalProject.GSCDataSetTableAdapters.InventoryTableAdapter">
+<member name="T:FinalProject.GSCDataSetTableAdapters.CookiesTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member>
-<member name="T:FinalProject.GSCDataSetTableAdapters.CookiesTableAdapter">
+<member name="T:FinalProject.GSCDataSetTableAdapters.InventoryTableAdapter">
 <summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
