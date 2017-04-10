@@ -139,6 +139,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Pass.vb" />
+    <Compile Include="User.vb" />
     <Compile Include="Users.Designer.vb">
       <DependentUpon>Users.vb</DependentUpon>
     </Compile>

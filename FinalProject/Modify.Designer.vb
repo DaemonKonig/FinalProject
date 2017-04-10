@@ -28,7 +28,7 @@ Partial Class Modify
         Me.cboTrpr = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnSub = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblDate = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtClose
@@ -90,16 +90,16 @@ Partial Class Modify
         Me.btnSub.Text = "Submit"
         Me.btnSub.UseVisualStyleBackColor = True
         '
-        'Label3
+        'lblDate
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(37, 159)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(111, 20)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Date of entry:"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblDate.AutoSize = True
+        Me.lblDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDate.Location = New System.Drawing.Point(37, 159)
+        Me.lblDate.Name = "lblDate"
+        Me.lblDate.Size = New System.Drawing.Size(111, 20)
+        Me.lblDate.TabIndex = 2
+        Me.lblDate.Text = "Date of entry:"
+        Me.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Modify
         '
@@ -107,7 +107,7 @@ Partial Class Modify
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(423, 275)
         Me.Controls.Add(Me.cboTrpr)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblModMssg)
         Me.Controls.Add(Me.txtDate)
@@ -126,5 +126,5 @@ Partial Class Modify
     Friend WithEvents cboTrpr As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnSub As Button
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblDate As Label
 End Class
