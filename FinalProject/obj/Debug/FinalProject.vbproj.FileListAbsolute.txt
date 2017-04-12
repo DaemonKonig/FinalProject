@@ -1,7 +1,5 @@
 C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
 C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.vbprojResolveAssemblyReference.cache
-C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.Input.resources
-C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.Input2.resources
 C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.Login.resources
 C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.Main.resources
 C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.Modify.resources
@@ -17,3 +15,4 @@ C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\bin\Debu
 C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\bin\Debug\FinalProject.xml
 C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.NewCookieSheet.resources

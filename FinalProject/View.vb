@@ -1,6 +1,6 @@
 ﻿Public Class View
 
-    Private mUser As New User
+    
 
 
 

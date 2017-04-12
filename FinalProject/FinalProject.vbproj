@@ -93,16 +93,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GSCDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Input.Designer.vb">
-      <DependentUpon>Input.vb</DependentUpon>
+    <Compile Include="NewCookieSheet.Designer.vb">
+      <DependentUpon>NewCookieSheet.vb</DependentUpon>
     </Compile>
-    <Compile Include="Input.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Input2.Designer.vb">
-      <DependentUpon>Input2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Input2.vb">
+    <Compile Include="NewCookieSheet.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.vb">
@@ -139,8 +133,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Pass.vb" />
-    <Compile Include="User.vb" />
+    <Compile Include="Logins.vb" />
     <Compile Include="Users.Designer.vb">
       <DependentUpon>Users.vb</DependentUpon>
     </Compile>
@@ -155,11 +148,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Input.resx">
-      <DependentUpon>Input.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Input2.resx">
-      <DependentUpon>Input2.vb</DependentUpon>
+    <EmbeddedResource Include="NewCookieSheet.resx">
+      <DependentUpon>NewCookieSheet.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

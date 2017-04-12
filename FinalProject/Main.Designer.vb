@@ -24,6 +24,9 @@ Partial Class Main
     Private Sub InitializeComponent()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.tsmFile = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmNCS = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmInvent = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmAddTrpr = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmClose = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmView = New System.Windows.Forms.ToolStripMenuItem()
@@ -33,9 +36,6 @@ Partial Class Main
         Me.tsmChangeCS = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmChangeTrpr = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmNCS = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmInvent = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -57,6 +57,25 @@ Partial Class Main
         Me.tsmFile.Name = "tsmFile"
         Me.tsmFile.Size = New System.Drawing.Size(47, 27)
         Me.tsmFile.Text = "File"
+        '
+        'NewToolStripMenuItem
+        '
+        Me.NewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmNCS, Me.tsmInvent})
+        Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(181, 28)
+        Me.NewToolStripMenuItem.Text = "New"
+        '
+        'tsmNCS
+        '
+        Me.tsmNCS.Name = "tsmNCS"
+        Me.tsmNCS.Size = New System.Drawing.Size(186, 28)
+        Me.tsmNCS.Text = "Cookie Sheet"
+        '
+        'tsmInvent
+        '
+        Me.tsmInvent.Name = "tsmInvent"
+        Me.tsmInvent.Size = New System.Drawing.Size(186, 28)
+        Me.tsmInvent.Text = "Inventory"
         '
         'tsmAddTrpr
         '
@@ -120,25 +139,6 @@ Partial Class Main
         Me.PictureBox1.Size = New System.Drawing.Size(301, 299)
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
-        '
-        'NewToolStripMenuItem
-        '
-        Me.NewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmNCS, Me.tsmInvent})
-        Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(181, 28)
-        Me.NewToolStripMenuItem.Text = "New"
-        '
-        'tsmNCS
-        '
-        Me.tsmNCS.Name = "tsmNCS"
-        Me.tsmNCS.Size = New System.Drawing.Size(186, 28)
-        Me.tsmNCS.Text = "Cookie Sheet"
-        '
-        'tsmInvent
-        '
-        Me.tsmInvent.Name = "tsmInvent"
-        Me.tsmInvent.Size = New System.Drawing.Size(186, 28)
-        Me.tsmInvent.Text = "Inventory"
         '
         'Main
         '
