@@ -1,7 +1,7 @@
 ﻿Imports FinalProject.Logins
 Imports System.IO
 Public Class Login
-
+    Public activeUser As String = ""
 
     Dim AllUsers As New Dictionary(Of String, Logins)
     Dim AllPass As New Dictionary(Of String, Logins)
@@ -11,9 +11,8 @@ Public Class Login
     Dim Allow As Boolean = False
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim infile As StreamReader
+        Dim infile As StreamReader = File.OpenText("UserInformation.txt")
         Try
-            infile = File.OpenText("UserInformation.txt")
             While Not infile.EndOfStream
                 Dim entireline As String = infile.ReadLine()
                 Dim tokens() As String = entireline.Split(","c)
@@ -31,9 +30,9 @@ Public Class Login
 
     Private Sub btnLog_Click(sender As Object, e As EventArgs) Handles btnLog.Click
         CheckLogin()
+        activeUser = txtUser.Text
         If Allow = True Then
             Main.ShowDialog()
-
         End If
 
 

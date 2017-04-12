@@ -64,7 +64,7 @@ Partial Class View
         Me.btnClose.Location = New System.Drawing.Point(360, 447)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 30)
-        Me.btnClose.TabIndex = 1
+        Me.btnClose.TabIndex = 2
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
@@ -75,7 +75,7 @@ Partial Class View
         Me.rdoSold.Location = New System.Drawing.Point(406, 12)
         Me.rdoSold.Name = "rdoSold"
         Me.rdoSold.Size = New System.Drawing.Size(128, 24)
-        Me.rdoSold.TabIndex = 5
+        Me.rdoSold.TabIndex = 1
         Me.rdoSold.TabStop = True
         Me.rdoSold.Text = "Cookies Sold"
         Me.rdoSold.UseVisualStyleBackColor = True
@@ -87,7 +87,7 @@ Partial Class View
         Me.rdoInvent.Location = New System.Drawing.Point(161, 12)
         Me.rdoInvent.Name = "rdoInvent"
         Me.rdoInvent.Size = New System.Drawing.Size(97, 24)
-        Me.rdoInvent.TabIndex = 6
+        Me.rdoInvent.TabIndex = 0
         Me.rdoInvent.TabStop = True
         Me.rdoInvent.Text = "Inventory"
         Me.rdoInvent.UseVisualStyleBackColor = True
@@ -117,6 +117,10 @@ Partial Class View
         '
         'dgvCookie
         '
+        Me.dgvCookie.AllowUserToAddRows = False
+        Me.dgvCookie.AllowUserToDeleteRows = False
+        Me.dgvCookie.AllowUserToResizeColumns = False
+        Me.dgvCookie.AllowUserToResizeRows = False
         Me.dgvCookie.AutoGenerateColumns = False
         Me.dgvCookie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCookie.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn1, Me.UserNameDataGridViewTextBoxColumn1, Me.DateDataGridViewTextBoxColumn1, Me.ThinMintsDataGridViewTextBoxColumn1, Me.CaramelDeLitesDataGridViewTextBoxColumn1, Me.PeanutButterPattiesDataGridViewTextBoxColumn1, Me.ShortBreadDataGridViewTextBoxColumn1, Me.CommentsDataGridViewTextBoxColumn1, Me.ZipCodeDataGridViewTextBoxColumn})
@@ -184,6 +188,10 @@ Partial Class View
         '
         'dgvInvent
         '
+        Me.dgvInvent.AllowUserToAddRows = False
+        Me.dgvInvent.AllowUserToDeleteRows = False
+        Me.dgvInvent.AllowUserToResizeColumns = False
+        Me.dgvInvent.AllowUserToResizeRows = False
         Me.dgvInvent.AutoGenerateColumns = False
         Me.dgvInvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvInvent.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.UserNameDataGridViewTextBoxColumn, Me.DateDataGridViewTextBoxColumn, Me.ThinMintsDataGridViewTextBoxColumn, Me.CaramelDeLitesDataGridViewTextBoxColumn, Me.PeanutButterPattiesDataGridViewTextBoxColumn, Me.ShortBreadDataGridViewTextBoxColumn, Me.CommentsDataGridViewTextBoxColumn, Me.ZipCodeDataGridViewTextBoxColumn1})

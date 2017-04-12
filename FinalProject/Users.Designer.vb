@@ -48,17 +48,17 @@ Partial Class Users
         Me.btnSub.Location = New System.Drawing.Point(110, 218)
         Me.btnSub.Name = "btnSub"
         Me.btnSub.Size = New System.Drawing.Size(75, 29)
-        Me.btnSub.TabIndex = 1
+        Me.btnSub.TabIndex = 3
         Me.btnSub.Text = "Submit"
         Me.btnSub.UseVisualStyleBackColor = True
         '
         'txtName
         '
         Me.txtName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtName.Location = New System.Drawing.Point(170, 54)
+        Me.txtName.Location = New System.Drawing.Point(188, 54)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(100, 27)
-        Me.txtName.TabIndex = 2
+        Me.txtName.TabIndex = 0
         '
         'Label4
         '
@@ -73,10 +73,10 @@ Partial Class Users
         'txtPass
         '
         Me.txtPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPass.Location = New System.Drawing.Point(170, 105)
+        Me.txtPass.Location = New System.Drawing.Point(188, 105)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.Size = New System.Drawing.Size(100, 27)
-        Me.txtPass.TabIndex = 2
+        Me.txtPass.TabIndex = 1
         '
         'Label2
         '
@@ -91,7 +91,7 @@ Partial Class Users
         'txtPhone
         '
         Me.txtPhone.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPhone.Location = New System.Drawing.Point(170, 146)
+        Me.txtPhone.Location = New System.Drawing.Point(188, 149)
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(100, 27)
         Me.txtPhone.TabIndex = 2
@@ -102,7 +102,7 @@ Partial Class Users
         Me.btnClose.Location = New System.Drawing.Point(213, 218)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 29)
-        Me.btnClose.TabIndex = 1
+        Me.btnClose.TabIndex = 4
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '

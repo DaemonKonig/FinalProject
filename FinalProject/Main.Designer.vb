@@ -46,7 +46,7 @@ Partial Class Main
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmFile, Me.tsmView, Me.tsmMod})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(614, 31)
+        Me.MenuStrip1.Size = New System.Drawing.Size(622, 31)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -136,7 +136,7 @@ Partial Class Main
         Me.PictureBox1.Image = Global.FinalProject.My.Resources.Resources.searching_cookie_300x300
         Me.PictureBox1.Location = New System.Drawing.Point(140, 50)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(301, 299)
+        Me.PictureBox1.Size = New System.Drawing.Size(309, 304)
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
@@ -144,7 +144,7 @@ Partial Class Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(614, 361)
+        Me.ClientSize = New System.Drawing.Size(622, 366)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1

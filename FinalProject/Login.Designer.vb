@@ -46,7 +46,7 @@ Partial Class Login
         Me.txtUser.Location = New System.Drawing.Point(218, 17)
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(135, 27)
-        Me.txtUser.TabIndex = 1
+        Me.txtUser.TabIndex = 0
         '
         'btnLog
         '
@@ -62,7 +62,7 @@ Partial Class Login
         Me.btnClose.Location = New System.Drawing.Point(257, 108)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(96, 37)
-        Me.btnClose.TabIndex = 2
+        Me.btnClose.TabIndex = 3
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
@@ -72,7 +72,7 @@ Partial Class Login
         Me.Label2.Location = New System.Drawing.Point(115, 61)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(97, 23)
-        Me.Label2.TabIndex = 0
+        Me.Label2.TabIndex = 5
         Me.Label2.Text = "PassWord:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '

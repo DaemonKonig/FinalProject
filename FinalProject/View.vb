@@ -1,6 +1,6 @@
 ﻿Public Class View
 
-    
+
 
 
 
@@ -32,8 +32,12 @@
 
 
 
+
+
         rdoSold.Checked = True
         dgvInvent.Visible = False
     End Sub
+
+
 
 End Class

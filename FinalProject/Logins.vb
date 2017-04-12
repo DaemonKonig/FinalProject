@@ -1,9 +1,11 @@
 ﻿Imports System.Data.OleDb
 Public Class Logins
+
+
     Private mUserName As String
     Private mPassword As String
 
-    Public Const UsrNmanPssWrd As String = "Logins.Text"
+
 
 
     Public ReadOnly Property UserName As String

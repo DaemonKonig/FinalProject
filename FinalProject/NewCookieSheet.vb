@@ -7,7 +7,7 @@
 
     End Sub
 
-    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles txtBread.TextChanged
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles txtBread.TextChanged, txtDate.TextChanged
 
     End Sub
 End Class

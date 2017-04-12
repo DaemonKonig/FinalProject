@@ -88,11 +88,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cookies.vb" />
     <Compile Include="GSCDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GSCDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Inventory.vb" />
     <Compile Include="NewCookieSheet.Designer.vb">
       <DependentUpon>NewCookieSheet.vb</DependentUpon>
     </Compile>
@@ -134,6 +136,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Logins.vb" />
+    <Compile Include="UserNamesvb.vb" />
     <Compile Include="Users.Designer.vb">
       <DependentUpon>Users.vb</DependentUpon>
     </Compile>

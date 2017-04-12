@@ -36,15 +36,19 @@ Partial Class NewCookieSheet
         Me.txtPatties = New System.Windows.Forms.TextBox()
         Me.lblVar = New System.Windows.Forms.Label()
         Me.btnClr = New System.Windows.Forms.Button()
+        Me.txtDate = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtComments = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnSub
         '
         Me.btnSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSub.Location = New System.Drawing.Point(34, 281)
+        Me.btnSub.Location = New System.Drawing.Point(285, 325)
         Me.btnSub.Name = "btnSub"
         Me.btnSub.Size = New System.Drawing.Size(87, 38)
-        Me.btnSub.TabIndex = 0
+        Me.btnSub.TabIndex = 4
         Me.btnSub.Text = "Submit"
         Me.btnSub.UseVisualStyleBackColor = True
         '
@@ -62,28 +66,28 @@ Partial Class NewCookieSheet
         'txtMints
         '
         Me.txtMints.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMints.Location = New System.Drawing.Point(192, 73)
+        Me.txtMints.Location = New System.Drawing.Point(214, 73)
         Me.txtMints.Name = "txtMints"
         Me.txtMints.Size = New System.Drawing.Size(158, 27)
-        Me.txtMints.TabIndex = 2
+        Me.txtMints.TabIndex = 0
         '
         'btnCncl
         '
         Me.btnCncl.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCncl.Location = New System.Drawing.Point(285, 281)
+        Me.btnCncl.Location = New System.Drawing.Point(536, 325)
         Me.btnCncl.Name = "btnCncl"
         Me.btnCncl.Size = New System.Drawing.Size(87, 38)
-        Me.btnCncl.TabIndex = 0
+        Me.btnCncl.TabIndex = 6
         Me.btnCncl.Text = "Cancel"
         Me.btnCncl.UseVisualStyleBackColor = True
         '
         'txtBread
         '
         Me.txtBread.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBread.Location = New System.Drawing.Point(192, 212)
+        Me.txtBread.Location = New System.Drawing.Point(214, 212)
         Me.txtBread.Name = "txtBread"
         Me.txtBread.Size = New System.Drawing.Size(158, 27)
-        Me.txtBread.TabIndex = 2
+        Me.txtBread.TabIndex = 3
         '
         'Label2
         '
@@ -128,10 +132,10 @@ Partial Class NewCookieSheet
         'txtCaramel
         '
         Me.txtCaramel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCaramel.Location = New System.Drawing.Point(192, 123)
+        Me.txtCaramel.Location = New System.Drawing.Point(214, 123)
         Me.txtCaramel.Name = "txtCaramel"
         Me.txtCaramel.Size = New System.Drawing.Size(158, 27)
-        Me.txtCaramel.TabIndex = 2
+        Me.txtCaramel.TabIndex = 1
         '
         'Label6
         '
@@ -147,7 +151,7 @@ Partial Class NewCookieSheet
         'txtPatties
         '
         Me.txtPatties.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPatties.Location = New System.Drawing.Point(192, 171)
+        Me.txtPatties.Location = New System.Drawing.Point(214, 171)
         Me.txtPatties.Name = "txtPatties"
         Me.txtPatties.Size = New System.Drawing.Size(158, 27)
         Me.txtPatties.TabIndex = 2
@@ -157,36 +161,80 @@ Partial Class NewCookieSheet
         Me.lblVar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVar.Location = New System.Drawing.Point(12, -7)
         Me.lblVar.Name = "lblVar"
-        Me.lblVar.Size = New System.Drawing.Size(379, 83)
+        Me.lblVar.Size = New System.Drawing.Size(786, 83)
         Me.lblVar.TabIndex = 1
-        Me.lblVar.Text = "Please Enter the amount of each cookie sold. Then click submit"
+        Me.lblVar.Text = "Please Enter the amount of each cookie sold, the date they were sold on, addition" &
+    "al comments as needed, then click submit to submit the information."
         Me.lblVar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnClr
         '
         Me.btnClr.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClr.Location = New System.Drawing.Point(162, 281)
+        Me.btnClr.Location = New System.Drawing.Point(406, 325)
         Me.btnClr.Name = "btnClr"
         Me.btnClr.Size = New System.Drawing.Size(87, 38)
-        Me.btnClr.TabIndex = 0
+        Me.btnClr.TabIndex = 5
         Me.btnClr.Text = "Clear"
         Me.btnClr.UseVisualStyleBackColor = True
+        '
+        'txtDate
+        '
+        Me.txtDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDate.Location = New System.Drawing.Point(214, 259)
+        Me.txtDate.Name = "txtDate"
+        Me.txtDate.Size = New System.Drawing.Size(158, 27)
+        Me.txtDate.TabIndex = 3
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(136, 262)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(50, 20)
+        Me.Label7.TabIndex = 1
+        Me.Label7.Text = "Date:"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtComments
+        '
+        Me.txtComments.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtComments.Location = New System.Drawing.Point(536, 103)
+        Me.txtComments.Multiline = True
+        Me.txtComments.Name = "txtComments"
+        Me.txtComments.Size = New System.Drawing.Size(244, 188)
+        Me.txtComments.TabIndex = 0
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(532, 80)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(95, 20)
+        Me.Label8.TabIndex = 1
+        Me.Label8.Text = "Comments:"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'NewCookieSheet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(432, 391)
+        Me.ClientSize = New System.Drawing.Size(823, 391)
+        Me.Controls.Add(Me.txtDate)
         Me.Controls.Add(Me.txtBread)
         Me.Controls.Add(Me.txtPatties)
         Me.Controls.Add(Me.txtCaramel)
+        Me.Controls.Add(Me.txtComments)
         Me.Controls.Add(Me.txtMints)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblVar)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnClr)
         Me.Controls.Add(Me.btnCncl)
@@ -212,4 +260,8 @@ Partial Class NewCookieSheet
     Friend WithEvents txtPatties As TextBox
     Friend WithEvents lblVar As Label
     Friend WithEvents btnClr As Button
+    Friend WithEvents txtDate As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtComments As TextBox
+    Friend WithEvents Label8 As Label
 End Class
