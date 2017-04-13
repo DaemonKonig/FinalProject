@@ -31,6 +31,10 @@ Partial Public Class GSCDataSet
     
     Private tableInventory As InventoryDataTable
     
+    Private relationAccounts_Cookies As Global.System.Data.DataRelation
+    
+    Private relationCookies_Inventory As Global.System.Data.DataRelation
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -242,6 +246,8 @@ Partial Public Class GSCDataSet
                 Me.tableInventory.InitVars
             End If
         End If
+        Me.relationAccounts_Cookies = Me.Relations("Accounts_Cookies")
+        Me.relationCookies_Inventory = Me.Relations("Cookies_Inventory")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -258,6 +264,10 @@ Partial Public Class GSCDataSet
         MyBase.Tables.Add(Me.tableCookies)
         Me.tableInventory = New InventoryDataTable()
         MyBase.Tables.Add(Me.tableInventory)
+        Me.relationAccounts_Cookies = New Global.System.Data.DataRelation("Accounts_Cookies", New Global.System.Data.DataColumn() {Me.tableAccounts.UsernameColumn}, New Global.System.Data.DataColumn() {Me.tableCookies.UserNameColumn}, false)
+        Me.Relations.Add(Me.relationAccounts_Cookies)
+        Me.relationCookies_Inventory = New Global.System.Data.DataRelation("Cookies_Inventory", New Global.System.Data.DataColumn() {Me.tableCookies.UserNameColumn}, New Global.System.Data.DataColumn() {Me.tableInventory.UserNameColumn}, false)
+        Me.Relations.Add(Me.relationCookies_Inventory)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -824,9 +834,12 @@ Partial Public Class GSCDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddCookiesRow(ByVal UserName As String, ByVal Scheduled As Date, ByVal ThinMints As Integer, ByVal Caramel_deLites As Integer, ByVal PeanutButter_Patties As Integer, ByVal ShortBread As Integer, ByVal Comments As String, ByVal ZipCode As Integer) As CookiesRow
+        Public Overloads Function AddCookiesRow(ByVal parentAccountsRowByAccounts_Cookies As AccountsRow, ByVal Scheduled As Date, ByVal ThinMints As Integer, ByVal Caramel_deLites As Integer, ByVal PeanutButter_Patties As Integer, ByVal ShortBread As Integer, ByVal Comments As String, ByVal ZipCode As Integer) As CookiesRow
             Dim rowCookiesRow As CookiesRow = CType(Me.NewRow,CookiesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, UserName, Scheduled, ThinMints, Caramel_deLites, PeanutButter_Patties, ShortBread, Comments, ZipCode}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Scheduled, ThinMints, Caramel_deLites, PeanutButter_Patties, ShortBread, Comments, ZipCode}
+            If (Not (parentAccountsRowByAccounts_Cookies) Is Nothing) Then
+                columnValuesArray(1) = parentAccountsRowByAccounts_Cookies(1)
+            End If
             rowCookiesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowCookiesRow)
             Return rowCookiesRow
@@ -1198,9 +1211,12 @@ Partial Public Class GSCDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddInventoryRow(ByVal UserName As String, ByVal Scheduled As Date, ByVal ThinMints As Integer, ByVal Caramel_deLites As Integer, ByVal PeanutButter_Patties As Integer, ByVal ShortBread As Integer, ByVal Comments As String, ByVal ZipCode As Integer) As InventoryRow
+        Public Overloads Function AddInventoryRow(ByVal parentCookiesRowByCookies_Inventory As CookiesRow, ByVal Scheduled As Date, ByVal ThinMints As Integer, ByVal Caramel_deLites As Integer, ByVal PeanutButter_Patties As Integer, ByVal ShortBread As Integer, ByVal Comments As String, ByVal ZipCode As Integer) As InventoryRow
             Dim rowInventoryRow As InventoryRow = CType(Me.NewRow,InventoryRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, UserName, Scheduled, ThinMints, Caramel_deLites, PeanutButter_Patties, ShortBread, Comments, ZipCode}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Scheduled, ThinMints, Caramel_deLites, PeanutButter_Patties, ShortBread, Comments, ZipCode}
+            If (Not (parentCookiesRowByCookies_Inventory) Is Nothing) Then
+                columnValuesArray(1) = parentCookiesRowByCookies_Inventory(1)
+            End If
             rowInventoryRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowInventoryRow)
             Return rowInventoryRow
@@ -1467,6 +1483,16 @@ Partial Public Class GSCDataSet
                 Me(Me.tableAccounts.PhoneNumberColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetCookiesRows() As CookiesRow()
+            If (Me.Table.ChildRelations("Accounts_Cookies") Is Nothing) Then
+                Return New CookiesRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("Accounts_Cookies")),CookiesRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -1605,6 +1631,17 @@ Partial Public Class GSCDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property AccountsRow() As AccountsRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("Accounts_Cookies")),AccountsRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("Accounts_Cookies"))
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsThinMintsNull() As Boolean
             Return Me.IsNull(Me.tableCookies.ThinMintsColumn)
         End Function
@@ -1662,6 +1699,16 @@ Partial Public Class GSCDataSet
         Public Sub SetCommentsNull()
             Me(Me.tableCookies.CommentsColumn) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function GetInventoryRows() As InventoryRow()
+            If (Me.Table.ChildRelations("Cookies_Inventory") Is Nothing) Then
+                Return New InventoryRow(-1) {}
+            Else
+                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("Cookies_Inventory")),InventoryRow())
+            End If
+        End Function
     End Class
     
     '''<summary>
@@ -1799,6 +1846,17 @@ Partial Public Class GSCDataSet
             End Get
             Set
                 Me(Me.tableInventory.ZipCodeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CookiesRow() As CookiesRow
+            Get
+                Return CType(Me.GetParentRow(Me.Table.ParentRelations("Cookies_Inventory")),CookiesRow)
+            End Get
+            Set
+                Me.SetParentRow(value, Me.Table.ParentRelations("Cookies_Inventory"))
             End Set
         End Property
         
@@ -2120,14 +2178,9 @@ Namespace GSCDataSetTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Accounts] WHERE (([UserId] = @Original_UserId) AND ([Username]"& _ 
-                " = @Original_Username) AND ([Password] = @Original_Password) AND ([PhoneNumber] "& _ 
-                "= @Original_PhoneNumber))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM Accounts"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (UserId = @UserId)"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Username", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Username", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Password", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PhoneNumber", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UserId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "UserId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Accounts] ([Username], [Password], [PhoneNumber]) VALUES (@Use"& _ 
@@ -2139,20 +2192,14 @@ Namespace GSCDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PhoneNumber", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Accounts] SET [Username] = @Username, [Password] = @Password, [Phon"& _ 
-                "eNumber] = @PhoneNumber WHERE (([UserId] = @Original_UserId) AND ([Username] = @"& _ 
-                "Original_Username) AND ([Password] = @Original_Password) AND ([PhoneNumber] = @O"& _ 
-                "riginal_PhoneNumber));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT UserId, Username, Password, PhoneNumber FROM Acco"& _ 
-                "unts WHERE (UserId = @UserId)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE Accounts"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET          Username = @Username, Password = @Password, PhoneNu"& _ 
+                "mber = @PhoneNumber"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (UserId = @UserId); "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT UserId, Username, Passw"& _ 
+                "ord, PhoneNumber FROM Accounts WHERE (UserId = @UserId)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Username", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Username", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Password", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PhoneNumber", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Username", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Username", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Password", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PhoneNumber", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UserId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "UserId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Username", Global.System.Data.SqlDbType.NChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "Username", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Password", Global.System.Data.SqlDbType.NChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "Password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PhoneNumber", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UserId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "UserId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2228,19 +2275,8 @@ Namespace GSCDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_UserId As Integer, ByVal Original_Username As String, ByVal Original_Password As String, ByVal Original_PhoneNumber As Integer) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_UserId,Integer)
-            If (Original_Username Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Username")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_Username,String)
-            End If
-            If (Original_Password Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Password")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Password,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_PhoneNumber,Integer)
+        Public Overloads Overridable Function Delete(ByVal UserId As Integer) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(UserId,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2291,7 +2327,7 @@ Namespace GSCDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Username As String, ByVal Password As String, ByVal PhoneNumber As Integer, ByVal Original_UserId As Integer, ByVal Original_Username As String, ByVal Original_Password As String, ByVal Original_PhoneNumber As Integer, ByVal UserId As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal Username As String, ByVal Password As String, ByVal PhoneNumber As Integer, ByVal UserId As Integer) As Integer
             If (Username Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Username")
             Else
@@ -2303,19 +2339,7 @@ Namespace GSCDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Password,String)
             End If
             Me.Adapter.UpdateCommand.Parameters(2).Value = CType(PhoneNumber,Integer)
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_UserId,Integer)
-            If (Original_Username Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Username")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_Username,String)
-            End If
-            If (Original_Password Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Password")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_Password,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_PhoneNumber,Integer)
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(UserId,Integer)
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(UserId,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2329,14 +2353,6 @@ Namespace GSCDataSetTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Username As String, ByVal Password As String, ByVal PhoneNumber As Integer, ByVal Original_UserId As Integer, ByVal Original_Username As String, ByVal Original_Password As String, ByVal Original_PhoneNumber As Integer) As Integer
-            Return Me.Update(Username, Password, PhoneNumber, Original_UserId, Original_Username, Original_Password, Original_PhoneNumber, Original_UserId)
         End Function
     End Class
     
@@ -2479,30 +2495,9 @@ Namespace GSCDataSetTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Cookies] WHERE (([CookieId] = @Original_CookieId) AND ([UserNa"& _ 
-                "me] = @Original_UserName) AND ([Scheduled] = @Original_Scheduled) AND ((@IsNull_"& _ 
-                "ThinMints = 1 AND [ThinMints] IS NULL) OR ([ThinMints] = @Original_ThinMints)) A"& _ 
-                "ND ((@IsNull_Caramel_deLites = 1 AND [Caramel_deLites] IS NULL) OR ([Caramel_deL"& _ 
-                "ites] = @Original_Caramel_deLites)) AND ((@IsNull_PeanutButter_Patties = 1 AND ["& _ 
-                "PeanutButter_Patties] IS NULL) OR ([PeanutButter_Patties] = @Original_PeanutButt"& _ 
-                "er_Patties)) AND ((@IsNull_ShortBread = 1 AND [ShortBread] IS NULL) OR ([ShortBr"& _ 
-                "ead] = @Original_ShortBread)) AND ((@IsNull_Comments = 1 AND [Comments] IS NULL)"& _ 
-                " OR ([Comments] = @Original_Comments)) AND ([ZipCode] = @Original_ZipCode))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM Cookies"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (CookieId = @CookieId)"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CookieId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CookieId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Scheduled", Global.System.Data.SqlDbType.SmallDateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Scheduled", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ThinMints", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ThinMints", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ThinMints", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ThinMints", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Caramel_deLites", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Caramel_deLites", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Caramel_deLites", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Caramel_deLites", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PeanutButter_Patties", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PeanutButter_Patties", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PeanutButter_Patties", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PeanutButter_Patties", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ShortBread", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShortBread", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ShortBread", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShortBread", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Comments", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Comments", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ZipCode", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ZipCode", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CookieId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "CookieId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Cookies] ([UserName], [Scheduled], [ThinMints], [Caramel_deLit"& _ 
@@ -2522,44 +2517,22 @@ Namespace GSCDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ZipCode", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ZipCode", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Cookies] SET [UserName] = @UserName, [Scheduled] = @Scheduled, [Thi"& _ 
-                "nMints] = @ThinMints, [Caramel_deLites] = @Caramel_deLites, [PeanutButter_Pattie"& _ 
-                "s] = @PeanutButter_Patties, [ShortBread] = @ShortBread, [Comments] = @Comments, "& _ 
-                "[ZipCode] = @ZipCode WHERE (([CookieId] = @Original_CookieId) AND ([UserName] = "& _ 
-                "@Original_UserName) AND ([Scheduled] = @Original_Scheduled) AND ((@IsNull_ThinMi"& _ 
-                "nts = 1 AND [ThinMints] IS NULL) OR ([ThinMints] = @Original_ThinMints)) AND ((@"& _ 
-                "IsNull_Caramel_deLites = 1 AND [Caramel_deLites] IS NULL) OR ([Caramel_deLites] "& _ 
-                "= @Original_Caramel_deLites)) AND ((@IsNull_PeanutButter_Patties = 1 AND [Peanut"& _ 
-                "Butter_Patties] IS NULL) OR ([PeanutButter_Patties] = @Original_PeanutButter_Pat"& _ 
-                "ties)) AND ((@IsNull_ShortBread = 1 AND [ShortBread] IS NULL) OR ([ShortBread] ="& _ 
-                " @Original_ShortBread)) AND ((@IsNull_Comments = 1 AND [Comments] IS NULL) OR (["& _ 
-                "Comments] = @Original_Comments)) AND ([ZipCode] = @Original_ZipCode));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT C"& _ 
-                "ookieId, UserName, Scheduled, ThinMints, Caramel_deLites, PeanutButter_Patties, "& _ 
-                "ShortBread, Comments, ZipCode FROM Cookies WHERE (CookieId = @CookieId)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE Cookies"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET          UserName = @UserName, Scheduled = @Scheduled, ThinMi"& _ 
+                "nts = @ThinMints, Caramel_deLites = @Caramel_deLites, PeanutButter_Patties = @Pe"& _ 
+                "anutButter_Patties, ShortBread = @ShortBread, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Comments = @Co"& _ 
+                "mments, ZipCode = @ZipCode"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (CookieId = @CookieId); "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT CookieId, Us"& _ 
+                "erName, Scheduled, ThinMints, Caramel_deLites, PeanutButter_Patties, ShortBread,"& _ 
+                " Comments, ZipCode FROM Cookies WHERE (CookieId = @CookieId)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UserName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Scheduled", Global.System.Data.SqlDbType.SmallDateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Scheduled", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ThinMints", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ThinMints", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Caramel_deLites", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Caramel_deLites", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PeanutButter_Patties", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PeanutButter_Patties", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ShortBread", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShortBread", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Comments", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ZipCode", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ZipCode", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CookieId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CookieId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Scheduled", Global.System.Data.SqlDbType.SmallDateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Scheduled", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ThinMints", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ThinMints", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ThinMints", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ThinMints", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Caramel_deLites", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Caramel_deLites", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Caramel_deLites", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Caramel_deLites", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PeanutButter_Patties", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PeanutButter_Patties", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PeanutButter_Patties", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PeanutButter_Patties", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ShortBread", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShortBread", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ShortBread", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShortBread", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Comments", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Comments", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ZipCode", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ZipCode", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CookieId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "CookieId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UserName", Global.System.Data.SqlDbType.NChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Scheduled", Global.System.Data.SqlDbType.SmallDateTime, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Scheduled", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ThinMints", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ThinMints", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Caramel_deLites", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Caramel_deLites", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PeanutButter_Patties", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "PeanutButter_Patties", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ShortBread", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ShortBread", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Comments", Global.System.Data.SqlDbType.NChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ZipCode", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ZipCode", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CookieId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "CookieId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2636,50 +2609,8 @@ Namespace GSCDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_CookieId As Integer, ByVal Original_UserName As String, ByVal Original_Scheduled As Date, ByVal Original_ThinMints As Global.System.Nullable(Of Integer), ByVal Original_Caramel_deLites As Global.System.Nullable(Of Integer), ByVal Original_PeanutButter_Patties As Global.System.Nullable(Of Integer), ByVal Original_ShortBread As Global.System.Nullable(Of Integer), ByVal Original_Comments As String, ByVal Original_ZipCode As Integer) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_CookieId,Integer)
-            If (Original_UserName Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_UserName")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_UserName,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Scheduled,Date)
-            If (Original_ThinMints.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_ThinMints.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Caramel_deLites.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Caramel_deLites.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (Original_PeanutButter_Patties.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_PeanutButter_Patties.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (Original_ShortBread.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_ShortBread.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Comments Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_Comments,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(13).Value = CType(Original_ZipCode,Integer)
+        Public Overloads Overridable Function Delete(ByVal CookieId As Integer) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(CookieId,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2751,25 +2682,7 @@ Namespace GSCDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal UserName As String,  _
-                    ByVal Scheduled As Date,  _
-                    ByVal ThinMints As Global.System.Nullable(Of Integer),  _
-                    ByVal Caramel_deLites As Global.System.Nullable(Of Integer),  _
-                    ByVal PeanutButter_Patties As Global.System.Nullable(Of Integer),  _
-                    ByVal ShortBread As Global.System.Nullable(Of Integer),  _
-                    ByVal Comments As String,  _
-                    ByVal ZipCode As Integer,  _
-                    ByVal Original_CookieId As Integer,  _
-                    ByVal Original_UserName As String,  _
-                    ByVal Original_Scheduled As Date,  _
-                    ByVal Original_ThinMints As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Caramel_deLites As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_PeanutButter_Patties As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_ShortBread As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Comments As String,  _
-                    ByVal Original_ZipCode As Integer,  _
-                    ByVal CookieId As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal UserName As String, ByVal Scheduled As Date, ByVal ThinMints As Global.System.Nullable(Of Integer), ByVal Caramel_deLites As Global.System.Nullable(Of Integer), ByVal PeanutButter_Patties As Global.System.Nullable(Of Integer), ByVal ShortBread As Global.System.Nullable(Of Integer), ByVal Comments As String, ByVal ZipCode As Integer, ByVal CookieId As Integer) As Integer
             If (UserName Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("UserName")
             Else
@@ -2802,50 +2715,7 @@ Namespace GSCDataSetTableAdapters
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Comments,String)
             End If
             Me.Adapter.UpdateCommand.Parameters(7).Value = CType(ZipCode,Integer)
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_CookieId,Integer)
-            If (Original_UserName Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_UserName")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_UserName,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Scheduled,Date)
-            If (Original_ThinMints.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_ThinMints.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Caramel_deLites.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Caramel_deLites.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
-            End If
-            If (Original_PeanutButter_Patties.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_PeanutButter_Patties.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
-            End If
-            If (Original_ShortBread.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_ShortBread.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Comments Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_Comments,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_ZipCode,Integer)
-            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(CookieId,Integer)
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(CookieId,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2859,31 +2729,6 @@ Namespace GSCDataSetTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal UserName As String,  _
-                    ByVal Scheduled As Date,  _
-                    ByVal ThinMints As Global.System.Nullable(Of Integer),  _
-                    ByVal Caramel_deLites As Global.System.Nullable(Of Integer),  _
-                    ByVal PeanutButter_Patties As Global.System.Nullable(Of Integer),  _
-                    ByVal ShortBread As Global.System.Nullable(Of Integer),  _
-                    ByVal Comments As String,  _
-                    ByVal ZipCode As Integer,  _
-                    ByVal Original_CookieId As Integer,  _
-                    ByVal Original_UserName As String,  _
-                    ByVal Original_Scheduled As Date,  _
-                    ByVal Original_ThinMints As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Caramel_deLites As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_PeanutButter_Patties As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_ShortBread As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Comments As String,  _
-                    ByVal Original_ZipCode As Integer) As Integer
-            Return Me.Update(UserName, Scheduled, ThinMints, Caramel_deLites, PeanutButter_Patties, ShortBread, Comments, ZipCode, Original_CookieId, Original_UserName, Original_Scheduled, Original_ThinMints, Original_Caramel_deLites, Original_PeanutButter_Patties, Original_ShortBread, Original_Comments, Original_ZipCode, Original_CookieId)
         End Function
     End Class
     
@@ -3026,32 +2871,9 @@ Namespace GSCDataSetTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Inventory] WHERE (([InventoryId] = @Original_InventoryId) AND "& _ 
-                "([UserName] = @Original_UserName) AND ([Scheduled] = @Original_Scheduled) AND (("& _ 
-                "@IsNull_ThinMints = 1 AND [ThinMints] IS NULL) OR ([ThinMints] = @Original_ThinM"& _ 
-                "ints)) AND ((@IsNull_Caramel_deLites = 1 AND [Caramel deLites] IS NULL) OR ([Car"& _ 
-                "amel deLites] = @Original_Caramel_deLites)) AND ((@IsNull_PeanutButter_Patties ="& _ 
-                " 1 AND [PeanutButter Patties] IS NULL) OR ([PeanutButter Patties] = @Original_Pe"& _ 
-                "anutButter_Patties)) AND ((@IsNull_ShortBread = 1 AND [ShortBread] IS NULL) OR ("& _ 
-                "[ShortBread] = @Original_ShortBread)) AND ((@IsNull_Comments = 1 AND [Comments] "& _ 
-                "IS NULL) OR ([Comments] = @Original_Comments)) AND ((@IsNull_ZipCode = 1 AND [Zi"& _ 
-                "pCode] IS NULL) OR ([ZipCode] = @Original_ZipCode)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM Inventory"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (InventoryId = @InventoryId)"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_InventoryId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InventoryId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Scheduled", Global.System.Data.SqlDbType.SmallDateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Scheduled", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ThinMints", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ThinMints", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ThinMints", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ThinMints", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Caramel_deLites", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Caramel deLites", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Caramel_deLites", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Caramel deLites", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PeanutButter_Patties", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PeanutButter Patties", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PeanutButter_Patties", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PeanutButter Patties", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ShortBread", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShortBread", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ShortBread", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShortBread", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Comments", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Comments", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ZipCode", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ZipCode", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ZipCode", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ZipCode", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InventoryId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "InventoryId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Inventory] ([UserName], [Scheduled], [ThinMints], [Caramel deL"& _ 
@@ -3071,46 +2893,23 @@ Namespace GSCDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ZipCode", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ZipCode", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Inventory] SET [UserName] = @UserName, [Scheduled] = @Scheduled, [T"& _ 
-                "hinMints] = @ThinMints, [Caramel deLites] = @Caramel_deLites, [PeanutButter Patt"& _ 
-                "ies] = @PeanutButter_Patties, [ShortBread] = @ShortBread, [Comments] = @Comments"& _ 
-                ", [ZipCode] = @ZipCode WHERE (([InventoryId] = @Original_InventoryId) AND ([User"& _ 
-                "Name] = @Original_UserName) AND ([Scheduled] = @Original_Scheduled) AND ((@IsNul"& _ 
-                "l_ThinMints = 1 AND [ThinMints] IS NULL) OR ([ThinMints] = @Original_ThinMints))"& _ 
-                " AND ((@IsNull_Caramel_deLites = 1 AND [Caramel deLites] IS NULL) OR ([Caramel d"& _ 
-                "eLites] = @Original_Caramel_deLites)) AND ((@IsNull_PeanutButter_Patties = 1 AND"& _ 
-                " [PeanutButter Patties] IS NULL) OR ([PeanutButter Patties] = @Original_PeanutBu"& _ 
-                "tter_Patties)) AND ((@IsNull_ShortBread = 1 AND [ShortBread] IS NULL) OR ([Short"& _ 
-                "Bread] = @Original_ShortBread)) AND ((@IsNull_Comments = 1 AND [Comments] IS NUL"& _ 
-                "L) OR ([Comments] = @Original_Comments)) AND ((@IsNull_ZipCode = 1 AND [ZipCode]"& _ 
-                " IS NULL) OR ([ZipCode] = @Original_ZipCode)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT InventoryId, UserName, S"& _ 
-                "cheduled, ThinMints, [Caramel deLites], [PeanutButter Patties], ShortBread, Comm"& _ 
-                "ents, ZipCode FROM Inventory WHERE (InventoryId = @InventoryId)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE Inventory"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET          UserName = @UserName, Scheduled = @Scheduled, Thin"& _ 
+                "Mints = @ThinMints, [Caramel deLites] = @Caramel_deLites, [PeanutButter Patties]"& _ 
+                " = @PeanutButter_Patties, ShortBread = @ShortBread, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Comments"& _ 
+                " = @Comments, ZipCode = @ZipCode"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (InventoryId = @InventoryId); "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT "& _ 
+                "InventoryId, UserName, Scheduled, ThinMints, [Caramel deLites], [PeanutButter Pa"& _ 
+                "tties], ShortBread, Comments, ZipCode FROM Inventory WHERE (InventoryId = @Inven"& _ 
+                "toryId)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UserName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Scheduled", Global.System.Data.SqlDbType.SmallDateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Scheduled", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ThinMints", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ThinMints", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Caramel_deLites", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Caramel deLites", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PeanutButter_Patties", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PeanutButter Patties", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ShortBread", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShortBread", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Comments", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ZipCode", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ZipCode", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_InventoryId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "InventoryId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserName", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Scheduled", Global.System.Data.SqlDbType.SmallDateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Scheduled", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ThinMints", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ThinMints", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ThinMints", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ThinMints", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Caramel_deLites", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Caramel deLites", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Caramel_deLites", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Caramel deLites", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PeanutButter_Patties", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PeanutButter Patties", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PeanutButter_Patties", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PeanutButter Patties", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ShortBread", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShortBread", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ShortBread", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ShortBread", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Comments", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Comments", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ZipCode", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ZipCode", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ZipCode", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ZipCode", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InventoryId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "InventoryId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UserName", Global.System.Data.SqlDbType.NChar, 20, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Scheduled", Global.System.Data.SqlDbType.SmallDateTime, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Scheduled", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ThinMints", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ThinMints", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Caramel_deLites", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Caramel deLites", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PeanutButter_Patties", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "PeanutButter Patties", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ShortBread", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ShortBread", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Comments", Global.System.Data.SqlDbType.NChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "Comments", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ZipCode", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ZipCode", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@InventoryId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "InventoryId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3187,56 +2986,8 @@ Namespace GSCDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_InventoryId As Integer, ByVal Original_UserName As String, ByVal Original_Scheduled As Date, ByVal Original_ThinMints As Global.System.Nullable(Of Integer), ByVal Original_Caramel_deLites As Global.System.Nullable(Of Integer), ByVal Original_PeanutButter_Patties As Global.System.Nullable(Of Integer), ByVal Original_ShortBread As Global.System.Nullable(Of Integer), ByVal Original_Comments As String, ByVal Original_ZipCode As Global.System.Nullable(Of Integer)) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_InventoryId,Integer)
-            If (Original_UserName Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_UserName")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_UserName,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Scheduled,Date)
-            If (Original_ThinMints.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_ThinMints.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Caramel_deLites.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Caramel_deLites.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (Original_PeanutButter_Patties.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_PeanutButter_Patties.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
-            End If
-            If (Original_ShortBread.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_ShortBread.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Comments Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_Comments,String)
-            End If
-            If (Original_ZipCode.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_ZipCode.Value,Integer)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
-            End If
+        Public Overloads Overridable Function Delete(ByVal InventoryId As Integer) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(InventoryId,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -3312,25 +3063,7 @@ Namespace GSCDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal UserName As String,  _
-                    ByVal Scheduled As Date,  _
-                    ByVal ThinMints As Global.System.Nullable(Of Integer),  _
-                    ByVal Caramel_deLites As Global.System.Nullable(Of Integer),  _
-                    ByVal PeanutButter_Patties As Global.System.Nullable(Of Integer),  _
-                    ByVal ShortBread As Global.System.Nullable(Of Integer),  _
-                    ByVal Comments As String,  _
-                    ByVal ZipCode As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_InventoryId As Integer,  _
-                    ByVal Original_UserName As String,  _
-                    ByVal Original_Scheduled As Date,  _
-                    ByVal Original_ThinMints As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Caramel_deLites As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_PeanutButter_Patties As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_ShortBread As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Comments As String,  _
-                    ByVal Original_ZipCode As Global.System.Nullable(Of Integer),  _
-                    ByVal InventoryId As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal UserName As String, ByVal Scheduled As Date, ByVal ThinMints As Global.System.Nullable(Of Integer), ByVal Caramel_deLites As Global.System.Nullable(Of Integer), ByVal PeanutButter_Patties As Global.System.Nullable(Of Integer), ByVal ShortBread As Global.System.Nullable(Of Integer), ByVal Comments As String, ByVal ZipCode As Global.System.Nullable(Of Integer), ByVal InventoryId As Integer) As Integer
             If (UserName Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("UserName")
             Else
@@ -3367,56 +3100,7 @@ Namespace GSCDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_InventoryId,Integer)
-            If (Original_UserName Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_UserName")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_UserName,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Scheduled,Date)
-            If (Original_ThinMints.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_ThinMints.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Caramel_deLites.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Caramel_deLites.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
-            End If
-            If (Original_PeanutButter_Patties.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_PeanutButter_Patties.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
-            End If
-            If (Original_ShortBread.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_ShortBread.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
-            End If
-            If (Original_Comments Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_Comments,String)
-            End If
-            If (Original_ZipCode.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_ZipCode.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
-            End If
-            Me.Adapter.UpdateCommand.Parameters(23).Value = CType(InventoryId,Integer)
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(InventoryId,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -3430,31 +3114,6 @@ Namespace GSCDataSetTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal UserName As String,  _
-                    ByVal Scheduled As Date,  _
-                    ByVal ThinMints As Global.System.Nullable(Of Integer),  _
-                    ByVal Caramel_deLites As Global.System.Nullable(Of Integer),  _
-                    ByVal PeanutButter_Patties As Global.System.Nullable(Of Integer),  _
-                    ByVal ShortBread As Global.System.Nullable(Of Integer),  _
-                    ByVal Comments As String,  _
-                    ByVal ZipCode As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_InventoryId As Integer,  _
-                    ByVal Original_UserName As String,  _
-                    ByVal Original_Scheduled As Date,  _
-                    ByVal Original_ThinMints As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Caramel_deLites As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_PeanutButter_Patties As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_ShortBread As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_Comments As String,  _
-                    ByVal Original_ZipCode As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(UserName, Scheduled, ThinMints, Caramel_deLites, PeanutButter_Patties, ShortBread, Comments, ZipCode, Original_InventoryId, Original_UserName, Original_Scheduled, Original_ThinMints, Original_Caramel_deLites, Original_PeanutButter_Patties, Original_ShortBread, Original_Comments, Original_ZipCode, Original_InventoryId)
         End Function
     End Class
     

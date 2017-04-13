@@ -136,7 +136,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Logins.vb" />
-    <Compile Include="UserNamesvb.vb" />
+    <Compile Include="Accounts.vb" />
     <Compile Include="Users.Designer.vb">
       <DependentUpon>Users.vb</DependentUpon>
     </Compile>
