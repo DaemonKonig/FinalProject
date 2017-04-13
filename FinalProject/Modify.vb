@@ -5,8 +5,7 @@ Public Class Modify
 
 
     Private Sub Modify_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim Lrow As GSCDataSet.CookiesRow
-        Lrow = m
+
     End Sub
 
     Private Sub lblModMssg_Click(sender As Object, e As EventArgs) Handles lblModMssg.Click
