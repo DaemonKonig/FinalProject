@@ -36,6 +36,7 @@ Partial Class Main
         Me.tsmChangeCS = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmChangeTrpr = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lblLogged = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -134,17 +135,26 @@ Partial Class Main
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox1.Image = Global.FinalProject.My.Resources.Resources.searching_cookie_300x300
-        Me.PictureBox1.Location = New System.Drawing.Point(140, 50)
+        Me.PictureBox1.Location = New System.Drawing.Point(140, 83)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(309, 304)
+        Me.PictureBox1.Size = New System.Drawing.Size(309, 271)
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
+        '
+        'lblLogged
+        '
+        Me.lblLogged.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLogged.Location = New System.Drawing.Point(213, 43)
+        Me.lblLogged.Name = "lblLogged"
+        Me.lblLogged.Size = New System.Drawing.Size(134, 23)
+        Me.lblLogged.TabIndex = 3
         '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(622, 366)
+        Me.Controls.Add(Me.lblLogged)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -172,4 +182,5 @@ Partial Class Main
     Friend WithEvents NewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents tsmNCS As ToolStripMenuItem
     Friend WithEvents tsmInvent As ToolStripMenuItem
+    Friend WithEvents lblLogged As Label
 End Class

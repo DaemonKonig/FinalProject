@@ -1,14 +1,55 @@
 ﻿
 Public Class Modify
-    Public Property mCID As Short
-    Private mUserName As New Cookies
-
+    Public Property mCookieId As Short
+    Private mCookieSheet As New Cookies
+    Private mUserNames As New Accounts
 
     Private Sub Modify_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim row As GSCDataSet.CookiesRow
+        row = mCookieSheet.FindByCkieId(mCookieId)
+        dtpDate.Value = row.Scheduled.Date
+        txtBread.Text = row.ShortBread
+        txtLites.Text = row.Caramel_deLites
+        txtMints.Text = row.ThinMints
+        txtPatties.Text = row.PeanutButter_Patties
+        txtComment.Text = row.Comments
+
+        cboTrpr.DataSource = mUserNames.Items
+        cboTrpr.DisplayMember = "UserName"
+        cboTrpr.ValueMember = "UserId"
 
     End Sub
 
     Private Sub lblModMssg_Click(sender As Object, e As EventArgs) Handles lblModMssg.Click
 
+    End Sub
+
+    Private Sub btnSub_Click(sender As Object, e As EventArgs) Handles btnSub.Click
+        Dim Scheduled As DateTime
+
+        Scheduled = Cookies.CombinedDateTime(dtpDate.Value.Date, CDate("12:00"))
+
+
+
+            Dim UserName As Short = CShort(cboTrpr.SelectedValue)
+
+
+        If mCookieSheet.Update(UserName, Scheduled, txtMints.Text, txtLites.Text, txtPatties.Text, txtBread.Text, txtComment.Text, txtZip.Text, mCookieId) Then
+            Me.Close()
+        Else
+            MessageBox.Show("Cannot Update Cookie Sheet, Please ensure that all forms are filled out correctly")
+        End If
+
+
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        For Each txt As TextBox In Controls.OfType(Of TextBox)
+            txt.Clear()
+        Next
+    End Sub
+
+    Private Sub txtClose_Click(sender As Object, e As EventArgs) Handles txtClose.Click
+        Me.Close()
     End Sub
 End Class

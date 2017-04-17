@@ -31,7 +31,7 @@ Public Class Login
 
     Private Sub btnLog_Click(sender As Object, e As EventArgs) Handles btnLog.Click
         CheckLogin()
-        activeUser = txtUser.Text
+
         If Allow And Combo = True Then
             Main.ShowDialog()
         Else
@@ -39,7 +39,7 @@ Public Class Login
             Return
         End If
 
-
+        activeUser = txtUser.Text
 
     End Sub
 

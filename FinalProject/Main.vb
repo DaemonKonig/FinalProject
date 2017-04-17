@@ -17,7 +17,7 @@ Public Class Main
     End Sub
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        lblLogged.Text = Login.activeUser
     End Sub
 
     Private Sub tsmCkieSht_Click(sender As Object, e As EventArgs) Handles tsmCkieSht.Click
@@ -40,5 +40,9 @@ Public Class Main
 
     Private Sub tsmClose_Click(sender As Object, e As EventArgs) Handles tsmClose.Click
         Me.Close()
+    End Sub
+
+    Private Sub lblLogged_Click(sender As Object, e As EventArgs) Handles lblLogged.Click
+
     End Sub
 End Class

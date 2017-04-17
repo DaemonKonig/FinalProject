@@ -1,9 +1,15 @@
-﻿Public Class NewCookieSheet
+﻿Imports FinalProject.Login
+Public Class NewCookieSheet
     Private mCookies As New Cookies
-    Private mUserName As New Accounts
+
 
     Private Sub Input_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
+
+        For Each txt As TextBox In Controls.OfType(Of TextBox)
+            txt.Clear()
+        Next
 
 
 
@@ -19,7 +25,7 @@
         End Try
 
 
-        Dim UserName As Short = CShort()
+        Dim UserName As Short = CShort(Login.activeUser)
 
 
         If mCookies.insert(UserName, Scheduled, txtMints.Text, txtCaramel.Text, txtPatties.Text, txtBread.Text, txtComments.Text, txtZip.Text) Then

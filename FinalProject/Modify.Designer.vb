@@ -23,7 +23,6 @@ Partial Class Modify
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.txtClose = New System.Windows.Forms.Button()
-        Me.txtDate = New System.Windows.Forms.TextBox()
         Me.lblModMssg = New System.Windows.Forms.Label()
         Me.cboTrpr = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -40,25 +39,20 @@ Partial Class Modify
         Me.txtComment = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btnClear = New System.Windows.Forms.Button()
+        Me.dtpDate = New System.Windows.Forms.DateTimePicker()
+        Me.txtZip = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtClose
         '
         Me.txtClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtClose.Location = New System.Drawing.Point(525, 357)
+        Me.txtClose.Location = New System.Drawing.Point(667, 357)
         Me.txtClose.Name = "txtClose"
         Me.txtClose.Size = New System.Drawing.Size(75, 31)
         Me.txtClose.TabIndex = 3
         Me.txtClose.Text = "Close"
         Me.txtClose.UseVisualStyleBackColor = True
-        '
-        'txtDate
-        '
-        Me.txtDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDate.Location = New System.Drawing.Point(206, 120)
-        Me.txtDate.Name = "txtDate"
-        Me.txtDate.Size = New System.Drawing.Size(100, 27)
-        Me.txtDate.TabIndex = 1
         '
         'lblModMssg
         '
@@ -94,7 +88,7 @@ Partial Class Modify
         'btnSub
         '
         Me.btnSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSub.Location = New System.Drawing.Point(282, 357)
+        Me.btnSub.Location = New System.Drawing.Point(474, 357)
         Me.btnSub.Name = "btnSub"
         Me.btnSub.Size = New System.Drawing.Size(75, 31)
         Me.btnSub.TabIndex = 2
@@ -139,7 +133,7 @@ Partial Class Modify
         'TextBox4
         '
         Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(206, 314)
+        Me.TextBox4.Location = New System.Drawing.Point(206, 317)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(100, 27)
         Me.TextBox4.TabIndex = 1
@@ -211,21 +205,52 @@ Partial Class Modify
         'btnClear
         '
         Me.btnClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClear.Location = New System.Drawing.Point(397, 357)
+        Me.btnClear.Location = New System.Drawing.Point(577, 357)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(75, 31)
         Me.btnClear.TabIndex = 2
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
         '
+        'dtpDate
+        '
+        Me.dtpDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpDate.Location = New System.Drawing.Point(206, 121)
+        Me.dtpDate.Margin = New System.Windows.Forms.Padding(4)
+        Me.dtpDate.Name = "dtpDate"
+        Me.dtpDate.Size = New System.Drawing.Size(144, 27)
+        Me.dtpDate.TabIndex = 15
+        '
+        'txtZip
+        '
+        Me.txtZip.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtZip.Location = New System.Drawing.Point(206, 361)
+        Me.txtZip.Name = "txtZip"
+        Me.txtZip.Size = New System.Drawing.Size(100, 27)
+        Me.txtZip.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(105, 364)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(75, 20)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "ZipCode:"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Modify
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(806, 418)
+        Me.Controls.Add(Me.dtpDate)
         Me.Controls.Add(Me.txtComment)
         Me.Controls.Add(Me.cboTrpr)
         Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtBread)
         Me.Controls.Add(Me.txtPatties)
         Me.Controls.Add(Me.txtLites)
@@ -233,11 +258,11 @@ Partial Class Modify
         Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblModMssg)
+        Me.Controls.Add(Me.txtZip)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.txtMints)
-        Me.Controls.Add(Me.txtDate)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.btnSub)
         Me.Controls.Add(Me.txtClose)
@@ -249,7 +274,6 @@ Partial Class Modify
     End Sub
 
     Friend WithEvents txtClose As Button
-    Friend WithEvents txtDate As TextBox
     Friend WithEvents lblModMssg As Label
     Friend WithEvents cboTrpr As ComboBox
     Friend WithEvents Label2 As Label
@@ -266,4 +290,7 @@ Partial Class Modify
     Friend WithEvents txtComment As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents btnClear As Button
+    Friend WithEvents dtpDate As DateTimePicker
+    Friend WithEvents txtZip As TextBox
+    Friend WithEvents Label1 As Label
 End Class

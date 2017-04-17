@@ -10,10 +10,11 @@
         End Try
     End Function
 
-    Public ReadOnly Property items As DataTable
+    Public ReadOnly Property Items() As DataTable
         Get
-            Return adapter.GetData()
-
+            Dim table As DataTable = adapter.GetData()
+            table.DefaultView.Sort = "UserName"
+            Return table
         End Get
     End Property
 

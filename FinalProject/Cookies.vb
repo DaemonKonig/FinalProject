@@ -37,5 +37,11 @@
 
     End Function
 
+    Public Function FindByCkieId(ByVal CkieId As Short) As GSCDataSet.CookiesRow
+        Dim table As GSCDataSet.CookiesDataTable
+        table = adapter.GetData()
+        Return table.FindByCookieId(CkieId)
+    End Function
+
 
 End Class
