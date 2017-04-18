@@ -31,30 +31,32 @@ Partial Class View
         Me.InventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.InventoryTableAdapter = New FinalProject.GSCDataSetTableAdapters.InventoryTableAdapter()
         Me.CookiesTableAdapter = New FinalProject.GSCDataSetTableAdapters.CookiesTableAdapter()
-        Me.dgvCookie = New System.Windows.Forms.DataGridView()
-        Me.IdDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UserNameDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ThinMintsDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CaramelDeLitesDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PeanutButterPattiesDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShortBreadDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CommentsDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ZipCodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvInvent = New System.Windows.Forms.DataGridView()
-        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CookiesInventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.dvgCookie = New System.Windows.Forms.DataGridView()
+        Me.CookieIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UserNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ScheduledDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ThinMintsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CaramelDeLitesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CarameldeLitesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PeanutButterPattiesDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ShortBreadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CommentsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ZipCodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvInvent = New System.Windows.Forms.DataGridView()
+        Me.InventoryIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UserNameDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ScheduledDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ThinMintsDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CaramelDeLitesDataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PeanutButterPattiesDataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShortBreadDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CommentsDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ZipCodeDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.CookiesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GSCDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvCookie, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CookiesInventoryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dvgCookie, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvInvent, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -115,99 +117,29 @@ Partial Class View
         '
         Me.CookiesTableAdapter.ClearBeforeFill = True
         '
-        'dgvCookie
+        'CookiesInventoryBindingSource
         '
-        Me.dgvCookie.AllowUserToAddRows = False
-        Me.dgvCookie.AllowUserToDeleteRows = False
-        Me.dgvCookie.AllowUserToResizeColumns = False
-        Me.dgvCookie.AllowUserToResizeRows = False
-        Me.dgvCookie.AutoGenerateColumns = False
-        Me.dgvCookie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCookie.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn1, Me.UserNameDataGridViewTextBoxColumn1, Me.DateDataGridViewTextBoxColumn1, Me.ThinMintsDataGridViewTextBoxColumn1, Me.CaramelDeLitesDataGridViewTextBoxColumn1, Me.PeanutButterPattiesDataGridViewTextBoxColumn1, Me.ShortBreadDataGridViewTextBoxColumn1, Me.CommentsDataGridViewTextBoxColumn1, Me.ZipCodeDataGridViewTextBoxColumn})
-        Me.dgvCookie.DataSource = Me.CookiesBindingSource
-        Me.dgvCookie.Location = New System.Drawing.Point(12, 62)
-        Me.dgvCookie.Name = "dgvCookie"
-        Me.dgvCookie.RowTemplate.Height = 24
-        Me.dgvCookie.Size = New System.Drawing.Size(779, 379)
-        Me.dgvCookie.TabIndex = 11
+        Me.CookiesInventoryBindingSource.DataMember = "Cookies_Inventory"
+        Me.CookiesInventoryBindingSource.DataSource = Me.CookiesBindingSource
         '
-        'IdDataGridViewTextBoxColumn1
+        'dvgCookie
         '
-        Me.IdDataGridViewTextBoxColumn1.DataPropertyName = "Id"
-        Me.IdDataGridViewTextBoxColumn1.HeaderText = "Id"
-        Me.IdDataGridViewTextBoxColumn1.Name = "IdDataGridViewTextBoxColumn1"
-        Me.IdDataGridViewTextBoxColumn1.ReadOnly = True
+        Me.dvgCookie.AutoGenerateColumns = False
+        Me.dvgCookie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dvgCookie.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CookieIdDataGridViewTextBoxColumn, Me.UserNameDataGridViewTextBoxColumn, Me.ScheduledDataGridViewTextBoxColumn, Me.ThinMintsDataGridViewTextBoxColumn, Me.CarameldeLitesDataGridViewTextBoxColumn, Me.PeanutButterPattiesDataGridViewTextBoxColumn, Me.ShortBreadDataGridViewTextBoxColumn, Me.CommentsDataGridViewTextBoxColumn, Me.ZipCodeDataGridViewTextBoxColumn})
+        Me.dvgCookie.DataSource = Me.CookiesBindingSource
+        Me.dvgCookie.Location = New System.Drawing.Point(12, 42)
+        Me.dvgCookie.Name = "dvgCookie"
+        Me.dvgCookie.RowTemplate.Height = 24
+        Me.dvgCookie.Size = New System.Drawing.Size(779, 387)
+        Me.dvgCookie.TabIndex = 3
         '
-        'UserNameDataGridViewTextBoxColumn1
+        'CookieIdDataGridViewTextBoxColumn
         '
-        Me.UserNameDataGridViewTextBoxColumn1.DataPropertyName = "UserName"
-        Me.UserNameDataGridViewTextBoxColumn1.HeaderText = "UserName"
-        Me.UserNameDataGridViewTextBoxColumn1.Name = "UserNameDataGridViewTextBoxColumn1"
-        '
-        'DateDataGridViewTextBoxColumn1
-        '
-        Me.DateDataGridViewTextBoxColumn1.DataPropertyName = "Date"
-        Me.DateDataGridViewTextBoxColumn1.HeaderText = "Date"
-        Me.DateDataGridViewTextBoxColumn1.Name = "DateDataGridViewTextBoxColumn1"
-        '
-        'ThinMintsDataGridViewTextBoxColumn1
-        '
-        Me.ThinMintsDataGridViewTextBoxColumn1.DataPropertyName = "ThinMints"
-        Me.ThinMintsDataGridViewTextBoxColumn1.HeaderText = "ThinMints"
-        Me.ThinMintsDataGridViewTextBoxColumn1.Name = "ThinMintsDataGridViewTextBoxColumn1"
-        '
-        'CaramelDeLitesDataGridViewTextBoxColumn1
-        '
-        Me.CaramelDeLitesDataGridViewTextBoxColumn1.DataPropertyName = "Caramel deLites"
-        Me.CaramelDeLitesDataGridViewTextBoxColumn1.HeaderText = "Caramel deLites"
-        Me.CaramelDeLitesDataGridViewTextBoxColumn1.Name = "CaramelDeLitesDataGridViewTextBoxColumn1"
-        '
-        'PeanutButterPattiesDataGridViewTextBoxColumn1
-        '
-        Me.PeanutButterPattiesDataGridViewTextBoxColumn1.DataPropertyName = "PeanutButter Patties"
-        Me.PeanutButterPattiesDataGridViewTextBoxColumn1.HeaderText = "PeanutButter Patties"
-        Me.PeanutButterPattiesDataGridViewTextBoxColumn1.Name = "PeanutButterPattiesDataGridViewTextBoxColumn1"
-        '
-        'ShortBreadDataGridViewTextBoxColumn1
-        '
-        Me.ShortBreadDataGridViewTextBoxColumn1.DataPropertyName = "ShortBread"
-        Me.ShortBreadDataGridViewTextBoxColumn1.HeaderText = "ShortBread"
-        Me.ShortBreadDataGridViewTextBoxColumn1.Name = "ShortBreadDataGridViewTextBoxColumn1"
-        '
-        'CommentsDataGridViewTextBoxColumn1
-        '
-        Me.CommentsDataGridViewTextBoxColumn1.DataPropertyName = "Comments"
-        Me.CommentsDataGridViewTextBoxColumn1.HeaderText = "Comments"
-        Me.CommentsDataGridViewTextBoxColumn1.Name = "CommentsDataGridViewTextBoxColumn1"
-        '
-        'ZipCodeDataGridViewTextBoxColumn
-        '
-        Me.ZipCodeDataGridViewTextBoxColumn.DataPropertyName = "ZipCode"
-        Me.ZipCodeDataGridViewTextBoxColumn.HeaderText = "ZipCode"
-        Me.ZipCodeDataGridViewTextBoxColumn.Name = "ZipCodeDataGridViewTextBoxColumn"
-        '
-        'dgvInvent
-        '
-        Me.dgvInvent.AllowUserToAddRows = False
-        Me.dgvInvent.AllowUserToDeleteRows = False
-        Me.dgvInvent.AllowUserToResizeColumns = False
-        Me.dgvInvent.AllowUserToResizeRows = False
-        Me.dgvInvent.AutoGenerateColumns = False
-        Me.dgvInvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvInvent.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.UserNameDataGridViewTextBoxColumn, Me.DateDataGridViewTextBoxColumn, Me.ThinMintsDataGridViewTextBoxColumn, Me.CaramelDeLitesDataGridViewTextBoxColumn, Me.PeanutButterPattiesDataGridViewTextBoxColumn, Me.ShortBreadDataGridViewTextBoxColumn, Me.CommentsDataGridViewTextBoxColumn, Me.ZipCodeDataGridViewTextBoxColumn1})
-        Me.dgvInvent.DataSource = Me.InventoryBindingSource
-        Me.dgvInvent.Location = New System.Drawing.Point(12, 62)
-        Me.dgvInvent.Name = "dgvInvent"
-        Me.dgvInvent.RowTemplate.Height = 24
-        Me.dgvInvent.Size = New System.Drawing.Size(779, 379)
-        Me.dgvInvent.TabIndex = 12
-        '
-        'IdDataGridViewTextBoxColumn
-        '
-        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
-        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
-        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
-        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CookieIdDataGridViewTextBoxColumn.DataPropertyName = "CookieId"
+        Me.CookieIdDataGridViewTextBoxColumn.HeaderText = "CookieId"
+        Me.CookieIdDataGridViewTextBoxColumn.Name = "CookieIdDataGridViewTextBoxColumn"
+        Me.CookieIdDataGridViewTextBoxColumn.ReadOnly = True
         '
         'UserNameDataGridViewTextBoxColumn
         '
@@ -215,11 +147,11 @@ Partial Class View
         Me.UserNameDataGridViewTextBoxColumn.HeaderText = "UserName"
         Me.UserNameDataGridViewTextBoxColumn.Name = "UserNameDataGridViewTextBoxColumn"
         '
-        'DateDataGridViewTextBoxColumn
+        'ScheduledDataGridViewTextBoxColumn
         '
-        Me.DateDataGridViewTextBoxColumn.DataPropertyName = "Date"
-        Me.DateDataGridViewTextBoxColumn.HeaderText = "Date"
-        Me.DateDataGridViewTextBoxColumn.Name = "DateDataGridViewTextBoxColumn"
+        Me.ScheduledDataGridViewTextBoxColumn.DataPropertyName = "Scheduled"
+        Me.ScheduledDataGridViewTextBoxColumn.HeaderText = "Scheduled"
+        Me.ScheduledDataGridViewTextBoxColumn.Name = "ScheduledDataGridViewTextBoxColumn"
         '
         'ThinMintsDataGridViewTextBoxColumn
         '
@@ -227,16 +159,16 @@ Partial Class View
         Me.ThinMintsDataGridViewTextBoxColumn.HeaderText = "ThinMints"
         Me.ThinMintsDataGridViewTextBoxColumn.Name = "ThinMintsDataGridViewTextBoxColumn"
         '
-        'CaramelDeLitesDataGridViewTextBoxColumn
+        'CarameldeLitesDataGridViewTextBoxColumn
         '
-        Me.CaramelDeLitesDataGridViewTextBoxColumn.DataPropertyName = "Caramel deLites"
-        Me.CaramelDeLitesDataGridViewTextBoxColumn.HeaderText = "Caramel deLites"
-        Me.CaramelDeLitesDataGridViewTextBoxColumn.Name = "CaramelDeLitesDataGridViewTextBoxColumn"
+        Me.CarameldeLitesDataGridViewTextBoxColumn.DataPropertyName = "Caramel_deLites"
+        Me.CarameldeLitesDataGridViewTextBoxColumn.HeaderText = "Caramel_deLites"
+        Me.CarameldeLitesDataGridViewTextBoxColumn.Name = "CarameldeLitesDataGridViewTextBoxColumn"
         '
         'PeanutButterPattiesDataGridViewTextBoxColumn
         '
-        Me.PeanutButterPattiesDataGridViewTextBoxColumn.DataPropertyName = "PeanutButter Patties"
-        Me.PeanutButterPattiesDataGridViewTextBoxColumn.HeaderText = "PeanutButter Patties"
+        Me.PeanutButterPattiesDataGridViewTextBoxColumn.DataPropertyName = "PeanutButter_Patties"
+        Me.PeanutButterPattiesDataGridViewTextBoxColumn.HeaderText = "PeanutButter_Patties"
         Me.PeanutButterPattiesDataGridViewTextBoxColumn.Name = "PeanutButterPattiesDataGridViewTextBoxColumn"
         '
         'ShortBreadDataGridViewTextBoxColumn
@@ -251,6 +183,73 @@ Partial Class View
         Me.CommentsDataGridViewTextBoxColumn.HeaderText = "Comments"
         Me.CommentsDataGridViewTextBoxColumn.Name = "CommentsDataGridViewTextBoxColumn"
         '
+        'ZipCodeDataGridViewTextBoxColumn
+        '
+        Me.ZipCodeDataGridViewTextBoxColumn.DataPropertyName = "ZipCode"
+        Me.ZipCodeDataGridViewTextBoxColumn.HeaderText = "ZipCode"
+        Me.ZipCodeDataGridViewTextBoxColumn.Name = "ZipCodeDataGridViewTextBoxColumn"
+        '
+        'dgvInvent
+        '
+        Me.dgvInvent.AutoGenerateColumns = False
+        Me.dgvInvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvInvent.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.InventoryIdDataGridViewTextBoxColumn, Me.UserNameDataGridViewTextBoxColumn1, Me.ScheduledDataGridViewTextBoxColumn1, Me.ThinMintsDataGridViewTextBoxColumn1, Me.CaramelDeLitesDataGridViewTextBoxColumn2, Me.PeanutButterPattiesDataGridViewTextBoxColumn2, Me.ShortBreadDataGridViewTextBoxColumn1, Me.CommentsDataGridViewTextBoxColumn1, Me.ZipCodeDataGridViewTextBoxColumn1})
+        Me.dgvInvent.DataSource = Me.InventoryBindingSource
+        Me.dgvInvent.Location = New System.Drawing.Point(12, 42)
+        Me.dgvInvent.Name = "dgvInvent"
+        Me.dgvInvent.RowTemplate.Height = 24
+        Me.dgvInvent.Size = New System.Drawing.Size(779, 387)
+        Me.dgvInvent.TabIndex = 4
+        '
+        'InventoryIdDataGridViewTextBoxColumn
+        '
+        Me.InventoryIdDataGridViewTextBoxColumn.DataPropertyName = "InventoryId"
+        Me.InventoryIdDataGridViewTextBoxColumn.HeaderText = "InventoryId"
+        Me.InventoryIdDataGridViewTextBoxColumn.Name = "InventoryIdDataGridViewTextBoxColumn"
+        Me.InventoryIdDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'UserNameDataGridViewTextBoxColumn1
+        '
+        Me.UserNameDataGridViewTextBoxColumn1.DataPropertyName = "UserName"
+        Me.UserNameDataGridViewTextBoxColumn1.HeaderText = "UserName"
+        Me.UserNameDataGridViewTextBoxColumn1.Name = "UserNameDataGridViewTextBoxColumn1"
+        '
+        'ScheduledDataGridViewTextBoxColumn1
+        '
+        Me.ScheduledDataGridViewTextBoxColumn1.DataPropertyName = "Scheduled"
+        Me.ScheduledDataGridViewTextBoxColumn1.HeaderText = "Scheduled"
+        Me.ScheduledDataGridViewTextBoxColumn1.Name = "ScheduledDataGridViewTextBoxColumn1"
+        '
+        'ThinMintsDataGridViewTextBoxColumn1
+        '
+        Me.ThinMintsDataGridViewTextBoxColumn1.DataPropertyName = "ThinMints"
+        Me.ThinMintsDataGridViewTextBoxColumn1.HeaderText = "ThinMints"
+        Me.ThinMintsDataGridViewTextBoxColumn1.Name = "ThinMintsDataGridViewTextBoxColumn1"
+        '
+        'CaramelDeLitesDataGridViewTextBoxColumn2
+        '
+        Me.CaramelDeLitesDataGridViewTextBoxColumn2.DataPropertyName = "Caramel deLites"
+        Me.CaramelDeLitesDataGridViewTextBoxColumn2.HeaderText = "Caramel deLites"
+        Me.CaramelDeLitesDataGridViewTextBoxColumn2.Name = "CaramelDeLitesDataGridViewTextBoxColumn2"
+        '
+        'PeanutButterPattiesDataGridViewTextBoxColumn2
+        '
+        Me.PeanutButterPattiesDataGridViewTextBoxColumn2.DataPropertyName = "PeanutButter Patties"
+        Me.PeanutButterPattiesDataGridViewTextBoxColumn2.HeaderText = "PeanutButter Patties"
+        Me.PeanutButterPattiesDataGridViewTextBoxColumn2.Name = "PeanutButterPattiesDataGridViewTextBoxColumn2"
+        '
+        'ShortBreadDataGridViewTextBoxColumn1
+        '
+        Me.ShortBreadDataGridViewTextBoxColumn1.DataPropertyName = "ShortBread"
+        Me.ShortBreadDataGridViewTextBoxColumn1.HeaderText = "ShortBread"
+        Me.ShortBreadDataGridViewTextBoxColumn1.Name = "ShortBreadDataGridViewTextBoxColumn1"
+        '
+        'CommentsDataGridViewTextBoxColumn1
+        '
+        Me.CommentsDataGridViewTextBoxColumn1.DataPropertyName = "Comments"
+        Me.CommentsDataGridViewTextBoxColumn1.HeaderText = "Comments"
+        Me.CommentsDataGridViewTextBoxColumn1.Name = "CommentsDataGridViewTextBoxColumn1"
+        '
         'ZipCodeDataGridViewTextBoxColumn1
         '
         Me.ZipCodeDataGridViewTextBoxColumn1.DataPropertyName = "ZipCode"
@@ -263,7 +262,7 @@ Partial Class View
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(803, 489)
         Me.Controls.Add(Me.dgvInvent)
-        Me.Controls.Add(Me.dgvCookie)
+        Me.Controls.Add(Me.dvgCookie)
         Me.Controls.Add(Me.rdoInvent)
         Me.Controls.Add(Me.rdoSold)
         Me.Controls.Add(Me.btnClose)
@@ -272,7 +271,8 @@ Partial Class View
         CType(Me.CookiesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GSCDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvCookie, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CookiesInventoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dvgCookie, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvInvent, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -286,24 +286,31 @@ Partial Class View
     Friend WithEvents InventoryTableAdapter As GSCDataSetTableAdapters.InventoryTableAdapter
     Friend WithEvents CookiesBindingSource As BindingSource
     Friend WithEvents CookiesTableAdapter As GSCDataSetTableAdapters.CookiesTableAdapter
-    Friend WithEvents dgvCookie As DataGridView
     Friend WithEvents IdDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents UserNameDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DateDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents ThinMintsDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents CaramelDeLitesDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents PeanutButterPattiesDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents ShortBreadDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents CommentsDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents ZipCodeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents dgvInvent As DataGridView
     Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents UserNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CookiesInventoryBindingSource As BindingSource
+    Friend WithEvents dvgCookie As DataGridView
+    Friend WithEvents CookieIdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents UserNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ScheduledDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ThinMintsDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CaramelDeLitesDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CarameldeLitesDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PeanutButterPattiesDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ShortBreadDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CommentsDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ZipCodeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents dgvInvent As DataGridView
+    Friend WithEvents InventoryIdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents UserNameDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents ScheduledDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents ThinMintsDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents CaramelDeLitesDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents PeanutButterPattiesDataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents ShortBreadDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents CommentsDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents ZipCodeDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
 End Class

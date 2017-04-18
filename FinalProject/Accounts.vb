@@ -10,6 +10,8 @@
         End Try
     End Function
 
+
+
     Public ReadOnly Property Items() As DataTable
         Get
             Dim table As DataTable = adapter.GetData()

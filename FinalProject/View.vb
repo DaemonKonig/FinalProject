@@ -6,7 +6,7 @@
 
     Private Sub rdoSold_CheckedChanged(sender As Object, e As EventArgs) Handles rdoSold.CheckedChanged
         If rdoSold.Checked = True Then
-            dgvCookie.Visible = True
+            dvgCookie.Visible = True
             dgvInvent.Visible = False
 
         End If
@@ -14,7 +14,7 @@
 
     Private Sub rdoInvent_CheckedChanged(sender As Object, e As EventArgs) Handles rdoInvent.CheckedChanged
         If rdoInvent.Checked = True Then
-            dgvCookie.Visible = False
+            dvgCookie.Visible = False
             dgvInvent.Visible = True
 
         End If
