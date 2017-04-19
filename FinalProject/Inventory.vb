@@ -1,5 +1,5 @@
 ﻿Public Class Inventory
-    Private adapter As GSCDataSetTableAdapters.InventoryTableAdapter
+    Private adapter As New GSCDataSetTableAdapters.InventoryTableAdapter
 
     Public Function insert(ByVal UserName As Short, ByVal Scheduled As DateTime, ByVal ThinMints As Integer, ByVal caramel_deLites As Integer, ByVal PeanutButter_Patties As Integer, ByVal ShortBread As Integer, ByVal comments As String, ByVal zipcode As Integer)
         Try

@@ -31,12 +31,12 @@ Partial Class Main
         Me.tsmClose = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmView = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmCkieSht = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmViewTrp = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmMod = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmChangeCS = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmChangeTrpr = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TroopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ModifyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CookiesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InventoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblLogged = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -44,7 +44,7 @@ Partial Class Main
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmFile, Me.tsmView, Me.tsmMod})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmFile, Me.tsmView, Me.ModifyToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(622, 31)
@@ -92,7 +92,7 @@ Partial Class Main
         '
         'tsmView
         '
-        Me.tsmView.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmCkieSht, Me.tsmViewTrp})
+        Me.tsmView.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmCkieSht, Me.TroopToolStripMenuItem})
         Me.tsmView.Name = "tsmView"
         Me.tsmView.Size = New System.Drawing.Size(53, 27)
         Me.tsmView.Text = "View"
@@ -100,33 +100,41 @@ Partial Class Main
         'tsmCkieSht
         '
         Me.tsmCkieSht.Name = "tsmCkieSht"
-        Me.tsmCkieSht.Size = New System.Drawing.Size(207, 26)
-        Me.tsmCkieSht.Text = "View Cookie Sheet"
+        Me.tsmCkieSht.Size = New System.Drawing.Size(217, 26)
+        Me.tsmCkieSht.Text = "Cookies && Inventory"
         '
-        'tsmViewTrp
+        'TroopToolStripMenuItem
         '
-        Me.tsmViewTrp.Name = "tsmViewTrp"
-        Me.tsmViewTrp.Size = New System.Drawing.Size(207, 26)
-        Me.tsmViewTrp.Text = "View Troop"
+        Me.TroopToolStripMenuItem.Name = "TroopToolStripMenuItem"
+        Me.TroopToolStripMenuItem.Size = New System.Drawing.Size(217, 26)
+        Me.TroopToolStripMenuItem.Text = "Troop"
         '
-        'tsmMod
+        'ModifyToolStripMenuItem
         '
-        Me.tsmMod.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmChangeCS, Me.tsmChangeTrpr})
-        Me.tsmMod.Name = "tsmMod"
-        Me.tsmMod.Size = New System.Drawing.Size(68, 27)
-        Me.tsmMod.Text = "Modify"
+        Me.ModifyToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CookiesToolStripMenuItem, Me.InventoryToolStripMenuItem})
+        Me.ModifyToolStripMenuItem.Name = "ModifyToolStripMenuItem"
+        Me.ModifyToolStripMenuItem.Size = New System.Drawing.Size(68, 27)
+        Me.ModifyToolStripMenuItem.Text = "Modify"
         '
-        'tsmChangeCS
+        'CookiesToolStripMenuItem
         '
-        Me.tsmChangeCS.Name = "tsmChangeCS"
-        Me.tsmChangeCS.Size = New System.Drawing.Size(225, 26)
-        Me.tsmChangeCS.Text = "Change Cookie Sheet"
+        Me.CookiesToolStripMenuItem.Name = "CookiesToolStripMenuItem"
+        Me.CookiesToolStripMenuItem.Size = New System.Drawing.Size(177, 26)
+        Me.CookiesToolStripMenuItem.Text = "Cookie Sheets"
         '
-        'tsmChangeTrpr
+        'InventoryToolStripMenuItem
         '
-        Me.tsmChangeTrpr.Name = "tsmChangeTrpr"
-        Me.tsmChangeTrpr.Size = New System.Drawing.Size(225, 26)
-        Me.tsmChangeTrpr.Text = "Change Trooper"
+        Me.InventoryToolStripMenuItem.Name = "InventoryToolStripMenuItem"
+        Me.InventoryToolStripMenuItem.Size = New System.Drawing.Size(177, 26)
+        Me.InventoryToolStripMenuItem.Text = "Inventory"
+        '
+        'lblLogged
+        '
+        Me.lblLogged.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLogged.Location = New System.Drawing.Point(213, 43)
+        Me.lblLogged.Name = "lblLogged"
+        Me.lblLogged.Size = New System.Drawing.Size(134, 23)
+        Me.lblLogged.TabIndex = 3
         '
         'PictureBox1
         '
@@ -140,14 +148,6 @@ Partial Class Main
         Me.PictureBox1.Size = New System.Drawing.Size(309, 271)
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
-        '
-        'lblLogged
-        '
-        Me.lblLogged.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLogged.Location = New System.Drawing.Point(213, 43)
-        Me.lblLogged.Name = "lblLogged"
-        Me.lblLogged.Size = New System.Drawing.Size(134, 23)
-        Me.lblLogged.TabIndex = 3
         '
         'Main
         '
@@ -174,13 +174,13 @@ Partial Class Main
     Friend WithEvents tsmAddTrpr As ToolStripMenuItem
     Friend WithEvents tsmClose As ToolStripMenuItem
     Friend WithEvents tsmCkieSht As ToolStripMenuItem
-    Friend WithEvents tsmViewTrp As ToolStripMenuItem
-    Friend WithEvents tsmMod As ToolStripMenuItem
-    Friend WithEvents tsmChangeCS As ToolStripMenuItem
-    Friend WithEvents tsmChangeTrpr As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents NewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents tsmNCS As ToolStripMenuItem
     Friend WithEvents tsmInvent As ToolStripMenuItem
     Friend WithEvents lblLogged As Label
+    Friend WithEvents ModifyToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CookiesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents InventoryToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TroopToolStripMenuItem As ToolStripMenuItem
 End Class

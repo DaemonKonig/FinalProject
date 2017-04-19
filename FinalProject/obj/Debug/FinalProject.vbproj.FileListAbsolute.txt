@@ -16,3 +16,6 @@ C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\bin\Debu
 C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
 C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.NewCookieSheet.resources
+C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.ViewMod.resources
+C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.EditTroopvb.resources
+C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.ViewTroop.resources

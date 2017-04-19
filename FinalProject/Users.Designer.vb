@@ -36,11 +36,11 @@ Partial Class Users
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(106, 57)
+        Me.Label1.Location = New System.Drawing.Point(71, 57)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(58, 20)
+        Me.Label1.Size = New System.Drawing.Size(91, 20)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Name:"
+        Me.Label1.Text = "Username:"
         '
         'btnSub
         '

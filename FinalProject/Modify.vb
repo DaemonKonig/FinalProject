@@ -5,8 +5,10 @@ Public Class Modify
     Private mUserNames As New Accounts
 
     Private Sub Modify_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'GSCDataSet.Accounts' table. You can move, or remove it, as needed.
+        Me.AccountsTableAdapter.Fill(Me.GSCDataSet.Accounts)
         Dim row As GSCDataSet.CookiesRow
-        row = mCookieSheet.FindByCkieId(mCookieId)
+        row = mCookieSheet.GetByCookieId(mCookieId)
         dtpDate.Value = row.Scheduled.Date
         txtBread.Text = row.ShortBread
         txtLites.Text = row.Caramel_deLites
@@ -14,9 +16,7 @@ Public Class Modify
         txtPatties.Text = row.PeanutButter_Patties
         txtComment.Text = row.Comments
 
-        cboTrpr.DataSource = mUserNames.Items
-        cboTrpr.DisplayMember = "UserName"
-        cboTrpr.ValueMember = "UserId"
+
 
     End Sub
 
@@ -31,7 +31,7 @@ Public Class Modify
 
 
 
-            Dim UserName As Short = CShort(cboTrpr.SelectedValue)
+        Dim UserName As String = cboTrpr.SelectedValue.ToString.Trim
 
 
         If mCookieSheet.Update(UserName, Scheduled, txtMints.Text, txtLites.Text, txtPatties.Text, txtBread.Text, txtComment.Text, txtZip.Text, mCookieId) Then

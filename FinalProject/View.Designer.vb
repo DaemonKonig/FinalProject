@@ -31,7 +31,6 @@ Partial Class View
         Me.InventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.InventoryTableAdapter = New FinalProject.GSCDataSetTableAdapters.InventoryTableAdapter()
         Me.CookiesTableAdapter = New FinalProject.GSCDataSetTableAdapters.CookiesTableAdapter()
-        Me.CookiesInventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.dvgCookie = New System.Windows.Forms.DataGridView()
         Me.CookieIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UserNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -52,18 +51,19 @@ Partial Class View
         Me.ShortBreadDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CommentsDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ZipCodeDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CookiesInventoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.CookiesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GSCDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CookiesInventoryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dvgCookie, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvInvent, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CookiesInventoryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnClose
         '
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClose.Location = New System.Drawing.Point(360, 447)
+        Me.btnClose.Location = New System.Drawing.Point(366, 485)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 30)
         Me.btnClose.TabIndex = 2
@@ -74,7 +74,7 @@ Partial Class View
         '
         Me.rdoSold.AutoSize = True
         Me.rdoSold.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdoSold.Location = New System.Drawing.Point(406, 12)
+        Me.rdoSold.Location = New System.Drawing.Point(395, 34)
         Me.rdoSold.Name = "rdoSold"
         Me.rdoSold.Size = New System.Drawing.Size(128, 24)
         Me.rdoSold.TabIndex = 1
@@ -86,7 +86,7 @@ Partial Class View
         '
         Me.rdoInvent.AutoSize = True
         Me.rdoInvent.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdoInvent.Location = New System.Drawing.Point(161, 12)
+        Me.rdoInvent.Location = New System.Drawing.Point(193, 34)
         Me.rdoInvent.Name = "rdoInvent"
         Me.rdoInvent.Size = New System.Drawing.Size(97, 24)
         Me.rdoInvent.TabIndex = 0
@@ -117,18 +117,14 @@ Partial Class View
         '
         Me.CookiesTableAdapter.ClearBeforeFill = True
         '
-        'CookiesInventoryBindingSource
-        '
-        Me.CookiesInventoryBindingSource.DataMember = "Cookies_Inventory"
-        Me.CookiesInventoryBindingSource.DataSource = Me.CookiesBindingSource
-        '
         'dvgCookie
         '
+        Me.dvgCookie.AllowUserToDeleteRows = False
         Me.dvgCookie.AutoGenerateColumns = False
         Me.dvgCookie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dvgCookie.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CookieIdDataGridViewTextBoxColumn, Me.UserNameDataGridViewTextBoxColumn, Me.ScheduledDataGridViewTextBoxColumn, Me.ThinMintsDataGridViewTextBoxColumn, Me.CarameldeLitesDataGridViewTextBoxColumn, Me.PeanutButterPattiesDataGridViewTextBoxColumn, Me.ShortBreadDataGridViewTextBoxColumn, Me.CommentsDataGridViewTextBoxColumn, Me.ZipCodeDataGridViewTextBoxColumn})
         Me.dvgCookie.DataSource = Me.CookiesBindingSource
-        Me.dvgCookie.Location = New System.Drawing.Point(12, 42)
+        Me.dvgCookie.Location = New System.Drawing.Point(18, 82)
         Me.dvgCookie.Name = "dvgCookie"
         Me.dvgCookie.RowTemplate.Height = 24
         Me.dvgCookie.Size = New System.Drawing.Size(779, 387)
@@ -191,11 +187,12 @@ Partial Class View
         '
         'dgvInvent
         '
+        Me.dgvInvent.AllowUserToDeleteRows = False
         Me.dgvInvent.AutoGenerateColumns = False
         Me.dgvInvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvInvent.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.InventoryIdDataGridViewTextBoxColumn, Me.UserNameDataGridViewTextBoxColumn1, Me.ScheduledDataGridViewTextBoxColumn1, Me.ThinMintsDataGridViewTextBoxColumn1, Me.CaramelDeLitesDataGridViewTextBoxColumn2, Me.PeanutButterPattiesDataGridViewTextBoxColumn2, Me.ShortBreadDataGridViewTextBoxColumn1, Me.CommentsDataGridViewTextBoxColumn1, Me.ZipCodeDataGridViewTextBoxColumn1})
         Me.dgvInvent.DataSource = Me.InventoryBindingSource
-        Me.dgvInvent.Location = New System.Drawing.Point(12, 42)
+        Me.dgvInvent.Location = New System.Drawing.Point(18, 82)
         Me.dgvInvent.Name = "dgvInvent"
         Me.dgvInvent.RowTemplate.Height = 24
         Me.dgvInvent.Size = New System.Drawing.Size(779, 387)
@@ -256,11 +253,16 @@ Partial Class View
         Me.ZipCodeDataGridViewTextBoxColumn1.HeaderText = "ZipCode"
         Me.ZipCodeDataGridViewTextBoxColumn1.Name = "ZipCodeDataGridViewTextBoxColumn1"
         '
+        'CookiesInventoryBindingSource
+        '
+        Me.CookiesInventoryBindingSource.DataMember = "Cookies_Inventory"
+        Me.CookiesInventoryBindingSource.DataSource = Me.CookiesBindingSource
+        '
         'View
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(803, 489)
+        Me.ClientSize = New System.Drawing.Size(809, 527)
         Me.Controls.Add(Me.dgvInvent)
         Me.Controls.Add(Me.dvgCookie)
         Me.Controls.Add(Me.rdoInvent)
@@ -271,9 +273,9 @@ Partial Class View
         CType(Me.CookiesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GSCDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.InventoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CookiesInventoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dvgCookie, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvInvent, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CookiesInventoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

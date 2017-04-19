@@ -33,11 +33,17 @@
 
 
 
-
         rdoSold.Checked = True
         dgvInvent.Visible = False
     End Sub
 
 
 
+    Private Sub tscboUser_Click(sender As Object, e As EventArgs) 
+
+    End Sub
+
+    Private Sub tscboUser_SelectedIndexChanged(sender As Object, e As EventArgs) 
+
+    End Sub
 End Class

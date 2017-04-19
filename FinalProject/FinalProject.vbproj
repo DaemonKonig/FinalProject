@@ -89,6 +89,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cookies.vb" />
+    <Compile Include="EditTroopvb.Designer.vb">
+      <DependentUpon>EditTroopvb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditTroopvb.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GSCDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,7 +141,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Logins.vb" />
     <Compile Include="Accounts.vb" />
     <Compile Include="Users.Designer.vb">
       <DependentUpon>Users.vb</DependentUpon>
@@ -149,8 +154,23 @@
     <Compile Include="View.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ViewMod.Designer.vb">
+      <DependentUpon>ViewMod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewMod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewTroop.Designer.vb">
+      <DependentUpon>ViewTroop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTroop.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="EditTroopvb.resx">
+      <DependentUpon>EditTroopvb.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewCookieSheet.resx">
       <DependentUpon>NewCookieSheet.vb</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +194,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View.resx">
       <DependentUpon>View.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewMod.resx">
+      <DependentUpon>ViewMod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTroop.resx">
+      <DependentUpon>ViewTroop.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 ﻿Public Class Cookies
-    Private adapter As GSCDataSetTableAdapters.CookiesTableAdapter
+    Private adapter As New GSCDataSetTableAdapters.CookiesTableAdapter
 
-    Public Function insert(ByVal UserName As Short, ByVal Scheduled As DateTime, ByVal ThinMints As Integer, ByVal caramel_deLites As Integer, ByVal PeanutButter_Patties As Integer, ByVal ShortBread As Integer, ByVal comments As String, ByVal zipcode As Integer)
+    Public Function insert(ByVal UserName As String, ByVal Scheduled As DateTime, ByVal ThinMints As Integer, ByVal caramel_deLites As Integer, ByVal PeanutButter_Patties As Integer, ByVal ShortBread As Integer, ByVal comments As String, ByVal zipcode As Integer)
         Try
             adapter.Insert(UserName, Scheduled, ThinMints, caramel_deLites, PeanutButter_Patties, ShortBread, comments, zipcode)
             Return True
@@ -22,7 +22,7 @@
         Return aDate.Add(ts)
     End Function
 
-    Public Function Update(ByVal UserName As Short, ByVal Scheduled As DateTime, ByVal ThinMints As Integer, ByVal Caramel_deLites As Integer, ByVal PeanutButter_Patties As Integer, ByVal ShortBread As Integer, ByVal comments As String, ByVal zipcode As Integer, ByVal CookieId As Integer) As Boolean
+    Public Function Update(ByVal UserName As String, ByVal Scheduled As DateTime, ByVal ThinMints As Integer, ByVal Caramel_deLites As Integer, ByVal PeanutButter_Patties As Integer, ByVal ShortBread As Integer, ByVal comments As String, ByVal zipcode As Integer, ByVal CookieId As Integer) As Boolean
         Try
             adapter.Update(UserName, Scheduled, ThinMints, Caramel_deLites, PeanutButter_Patties, ShortBread, comments, zipcode, CookieId)
             Return True
@@ -37,10 +37,10 @@
 
     End Function
 
-    Public Function FindByCkieId(ByVal CkieId As Short) As GSCDataSet.CookiesRow
+    Public Function GetByCookieId(ByVal CookieId As Integer) As GSCDataSet.CookiesRow
         Dim table As GSCDataSet.CookiesDataTable
         table = adapter.GetData()
-        Return table.FindByCookieId(CkieId)
+        Return table.FindByCookieId(CookieId)
     End Function
 
 

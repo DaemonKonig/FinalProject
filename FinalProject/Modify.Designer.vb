@@ -22,19 +22,22 @@ Partial Class Modify
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.txtClose = New System.Windows.Forms.Button()
         Me.lblModMssg = New System.Windows.Forms.Label()
         Me.cboTrpr = New System.Windows.Forms.ComboBox()
+        Me.AccountsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GSCDataSet = New FinalProject.GSCDataSet()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnSub = New System.Windows.Forms.Button()
         Me.lblDate = New System.Windows.Forms.Label()
         Me.txtMints = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.txtLites = New System.Windows.Forms.Label()
-        Me.txtPatties = New System.Windows.Forms.Label()
-        Me.txtBread = New System.Windows.Forms.Label()
+        Me.txtLites = New System.Windows.Forms.TextBox()
+        Me.txtPatties = New System.Windows.Forms.TextBox()
+        Me.txtBread = New System.Windows.Forms.TextBox()
+        Me.derp3 = New System.Windows.Forms.Label()
+        Me.derp2 = New System.Windows.Forms.Label()
+        Me.derp1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtComment = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -42,12 +45,15 @@ Partial Class Modify
         Me.dtpDate = New System.Windows.Forms.DateTimePicker()
         Me.txtZip = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.AccountsTableAdapter = New FinalProject.GSCDataSetTableAdapters.AccountsTableAdapter()
+        CType(Me.AccountsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GSCDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtClose
         '
         Me.txtClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtClose.Location = New System.Drawing.Point(667, 357)
+        Me.txtClose.Location = New System.Drawing.Point(667, 378)
         Me.txtClose.Name = "txtClose"
         Me.txtClose.Size = New System.Drawing.Size(75, 31)
         Me.txtClose.TabIndex = 3
@@ -67,18 +73,31 @@ Partial Class Modify
         '
         'cboTrpr
         '
+        Me.cboTrpr.DataSource = Me.AccountsBindingSource
+        Me.cboTrpr.DisplayMember = "Username"
         Me.cboTrpr.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTrpr.FormattingEnabled = True
-        Me.cboTrpr.Location = New System.Drawing.Point(206, 73)
+        Me.cboTrpr.Location = New System.Drawing.Point(263, 73)
         Me.cboTrpr.Name = "cboTrpr"
-        Me.cboTrpr.Size = New System.Drawing.Size(121, 28)
+        Me.cboTrpr.Size = New System.Drawing.Size(144, 28)
         Me.cboTrpr.TabIndex = 0
+        Me.cboTrpr.ValueMember = "Username"
+        '
+        'AccountsBindingSource
+        '
+        Me.AccountsBindingSource.DataMember = "Accounts"
+        Me.AccountsBindingSource.DataSource = Me.GSCDataSet
+        '
+        'GSCDataSet
+        '
+        Me.GSCDataSet.DataSetName = "GSCDataSet"
+        Me.GSCDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(103, 76)
+        Me.Label2.Location = New System.Drawing.Point(142, 76)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(72, 20)
         Me.Label2.TabIndex = 2
@@ -88,7 +107,7 @@ Partial Class Modify
         'btnSub
         '
         Me.btnSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSub.Location = New System.Drawing.Point(474, 357)
+        Me.btnSub.Location = New System.Drawing.Point(474, 378)
         Me.btnSub.Name = "btnSub"
         Me.btnSub.Size = New System.Drawing.Size(75, 31)
         Me.btnSub.TabIndex = 2
@@ -99,7 +118,7 @@ Partial Class Modify
         '
         Me.lblDate.AutoSize = True
         Me.lblDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDate.Location = New System.Drawing.Point(88, 174)
+        Me.lblDate.Location = New System.Drawing.Point(127, 174)
         Me.lblDate.Name = "lblDate"
         Me.lblDate.Size = New System.Drawing.Size(87, 20)
         Me.lblDate.TabIndex = 2
@@ -109,73 +128,73 @@ Partial Class Modify
         'txtMints
         '
         Me.txtMints.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMints.Location = New System.Drawing.Point(206, 171)
+        Me.txtMints.Location = New System.Drawing.Point(263, 167)
         Me.txtMints.Name = "txtMints"
         Me.txtMints.Size = New System.Drawing.Size(100, 27)
         Me.txtMints.TabIndex = 1
         '
-        'TextBox2
-        '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(206, 222)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 27)
-        Me.TextBox2.TabIndex = 1
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(206, 272)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 27)
-        Me.TextBox3.TabIndex = 1
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(206, 317)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 27)
-        Me.TextBox4.TabIndex = 1
-        '
         'txtLites
         '
-        Me.txtLites.AutoSize = True
         Me.txtLites.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLites.Location = New System.Drawing.Point(44, 225)
+        Me.txtLites.Location = New System.Drawing.Point(263, 218)
         Me.txtLites.Name = "txtLites"
-        Me.txtLites.Size = New System.Drawing.Size(137, 20)
-        Me.txtLites.TabIndex = 2
-        Me.txtLites.Text = "Caramel deLites:"
-        Me.txtLites.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.txtLites.Size = New System.Drawing.Size(100, 27)
+        Me.txtLites.TabIndex = 1
         '
         'txtPatties
         '
-        Me.txtPatties.AutoSize = True
         Me.txtPatties.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPatties.Location = New System.Drawing.Point(12, 275)
+        Me.txtPatties.Location = New System.Drawing.Point(263, 268)
         Me.txtPatties.Name = "txtPatties"
-        Me.txtPatties.Size = New System.Drawing.Size(169, 20)
-        Me.txtPatties.TabIndex = 2
-        Me.txtPatties.Text = "PeanutButter Patties:"
-        Me.txtPatties.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.txtPatties.Size = New System.Drawing.Size(100, 27)
+        Me.txtPatties.TabIndex = 1
         '
         'txtBread
         '
-        Me.txtBread.AutoSize = True
         Me.txtBread.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBread.Location = New System.Drawing.Point(88, 317)
+        Me.txtBread.Location = New System.Drawing.Point(263, 317)
         Me.txtBread.Name = "txtBread"
-        Me.txtBread.Size = New System.Drawing.Size(99, 20)
-        Me.txtBread.TabIndex = 2
-        Me.txtBread.Text = "ShortBread:"
-        Me.txtBread.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.txtBread.Size = New System.Drawing.Size(100, 27)
+        Me.txtBread.TabIndex = 1
+        '
+        'derp3
+        '
+        Me.derp3.AutoSize = True
+        Me.derp3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.derp3.Location = New System.Drawing.Point(89, 225)
+        Me.derp3.Name = "derp3"
+        Me.derp3.Size = New System.Drawing.Size(137, 20)
+        Me.derp3.TabIndex = 2
+        Me.derp3.Text = "Caramel deLites:"
+        Me.derp3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'derp2
+        '
+        Me.derp2.AutoSize = True
+        Me.derp2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.derp2.Location = New System.Drawing.Point(57, 271)
+        Me.derp2.Name = "derp2"
+        Me.derp2.Size = New System.Drawing.Size(169, 20)
+        Me.derp2.TabIndex = 2
+        Me.derp2.Text = "PeanutButter Patties:"
+        Me.derp2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'derp1
+        '
+        Me.derp1.AutoSize = True
+        Me.derp1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.derp1.Location = New System.Drawing.Point(127, 320)
+        Me.derp1.Name = "derp1"
+        Me.derp1.Size = New System.Drawing.Size(99, 20)
+        Me.derp1.TabIndex = 2
+        Me.derp1.Text = "ShortBread:"
+        Me.derp1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(64, 123)
+        Me.Label5.Location = New System.Drawing.Point(103, 125)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(111, 20)
         Me.Label5.TabIndex = 2
@@ -205,7 +224,7 @@ Partial Class Modify
         'btnClear
         '
         Me.btnClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClear.Location = New System.Drawing.Point(577, 357)
+        Me.btnClear.Location = New System.Drawing.Point(571, 378)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(75, 31)
         Me.btnClear.TabIndex = 2
@@ -216,7 +235,7 @@ Partial Class Modify
         '
         Me.dtpDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDate.Location = New System.Drawing.Point(206, 121)
+        Me.dtpDate.Location = New System.Drawing.Point(263, 120)
         Me.dtpDate.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpDate.Name = "dtpDate"
         Me.dtpDate.Size = New System.Drawing.Size(144, 27)
@@ -225,7 +244,7 @@ Partial Class Modify
         'txtZip
         '
         Me.txtZip.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtZip.Location = New System.Drawing.Point(206, 361)
+        Me.txtZip.Location = New System.Drawing.Point(263, 361)
         Me.txtZip.Name = "txtZip"
         Me.txtZip.Size = New System.Drawing.Size(100, 27)
         Me.txtZip.TabIndex = 1
@@ -234,40 +253,46 @@ Partial Class Modify
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(105, 364)
+        Me.Label1.Location = New System.Drawing.Point(151, 364)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(75, 20)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "ZipCode:"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'AccountsTableAdapter
+        '
+        Me.AccountsTableAdapter.ClearBeforeFill = True
+        '
         'Modify
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(806, 418)
+        Me.ClientSize = New System.Drawing.Size(806, 452)
         Me.Controls.Add(Me.dtpDate)
         Me.Controls.Add(Me.txtComment)
         Me.Controls.Add(Me.cboTrpr)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtBread)
-        Me.Controls.Add(Me.txtPatties)
-        Me.Controls.Add(Me.txtLites)
+        Me.Controls.Add(Me.derp1)
+        Me.Controls.Add(Me.derp2)
+        Me.Controls.Add(Me.derp3)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lblModMssg)
         Me.Controls.Add(Me.txtZip)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtBread)
+        Me.Controls.Add(Me.txtPatties)
+        Me.Controls.Add(Me.txtLites)
         Me.Controls.Add(Me.txtMints)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.btnSub)
         Me.Controls.Add(Me.txtClose)
         Me.Name = "Modify"
         Me.Text = "Modify Cookies"
+        CType(Me.AccountsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GSCDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -280,12 +305,12 @@ Partial Class Modify
     Friend WithEvents btnSub As Button
     Friend WithEvents lblDate As Label
     Friend WithEvents txtMints As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents txtLites As Label
-    Friend WithEvents txtPatties As Label
-    Friend WithEvents txtBread As Label
+    Friend WithEvents txtLites As TextBox
+    Friend WithEvents txtPatties As TextBox
+    Friend WithEvents txtBread As TextBox
+    Friend WithEvents derp3 As Label
+    Friend WithEvents derp2 As Label
+    Friend WithEvents derp1 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents txtComment As TextBox
     Friend WithEvents Label6 As Label
@@ -293,4 +318,7 @@ Partial Class Modify
     Friend WithEvents dtpDate As DateTimePicker
     Friend WithEvents txtZip As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents GSCDataSet As GSCDataSet
+    Friend WithEvents AccountsBindingSource As BindingSource
+    Friend WithEvents AccountsTableAdapter As GSCDataSetTableAdapters.AccountsTableAdapter
 End Class

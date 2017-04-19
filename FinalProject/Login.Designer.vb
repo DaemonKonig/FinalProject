@@ -22,12 +22,18 @@ Partial Class Login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtUser = New System.Windows.Forms.TextBox()
         Me.btnLog = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtPass = New System.Windows.Forms.TextBox()
+        Me.cboUsers = New System.Windows.Forms.ComboBox()
+        Me.AccountsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.GSCDataSet = New FinalProject.GSCDataSet()
+        Me.AccountsTableAdapter = New FinalProject.GSCDataSetTableAdapters.AccountsTableAdapter()
+        CType(Me.AccountsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GSCDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -39,14 +45,6 @@ Partial Class Login
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Name:"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtUser
-        '
-        Me.txtUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUser.Location = New System.Drawing.Point(218, 17)
-        Me.txtUser.Name = "txtUser"
-        Me.txtUser.Size = New System.Drawing.Size(135, 27)
-        Me.txtUser.TabIndex = 0
         '
         'btnLog
         '
@@ -84,28 +82,59 @@ Partial Class Login
         Me.txtPass.Size = New System.Drawing.Size(135, 27)
         Me.txtPass.TabIndex = 1
         '
+        'cboUsers
+        '
+        Me.cboUsers.DataSource = Me.AccountsBindingSource
+        Me.cboUsers.DisplayMember = "Username"
+        Me.cboUsers.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboUsers.FormattingEnabled = True
+        Me.cboUsers.Location = New System.Drawing.Point(218, 20)
+        Me.cboUsers.Name = "cboUsers"
+        Me.cboUsers.Size = New System.Drawing.Size(135, 28)
+        Me.cboUsers.TabIndex = 6
+        Me.cboUsers.ValueMember = "Password"
+        '
+        'AccountsBindingSource
+        '
+        Me.AccountsBindingSource.DataMember = "Accounts"
+        Me.AccountsBindingSource.DataSource = Me.GSCDataSet
+        '
+        'GSCDataSet
+        '
+        Me.GSCDataSet.DataSetName = "GSCDataSet"
+        Me.GSCDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'AccountsTableAdapter
+        '
+        Me.AccountsTableAdapter.ClearBeforeFill = True
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(455, 157)
+        Me.Controls.Add(Me.cboUsers)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnLog)
         Me.Controls.Add(Me.txtPass)
-        Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Login"
         Me.Text = "Login"
+        CType(Me.AccountsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GSCDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtUser As TextBox
     Friend WithEvents btnLog As Button
     Friend WithEvents btnClose As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents txtPass As TextBox
+    Friend WithEvents cboUsers As ComboBox
+    Friend WithEvents GSCDataSet As GSCDataSet
+    Friend WithEvents AccountsBindingSource As BindingSource
+    Friend WithEvents AccountsTableAdapter As GSCDataSetTableAdapters.AccountsTableAdapter
 End Class

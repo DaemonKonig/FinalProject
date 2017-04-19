@@ -1,31 +1,28 @@
 ﻿Imports FinalProject.Login
 Imports System.IO
 Public Class Users
-    Private NewUser As New Dictionary(Of String, Logins)
+    Private mAccounts As New Accounts
 
     Private Sub btnSub_Click(sender As Object, e As EventArgs) Handles btnSub.Click
-        CreateUser()
 
-    End Sub
 
-    Private Sub CreateUser()
-        Dim UserName As String = txtName.Text
-        Dim PassWord As String = txtPass.Text
-        Dim outFile As StreamWriter = File.AppendText("UserInformation.txt")
 
-        If UserName & PassWord IsNot "" Then
-            outFile.WriteLine(UserName & "," & PassWord)
-            outFile.Close()
-            MessageBox.Show("User has been added")
+        If mAccounts.insert(txtName.Text, txtPass.Text, txtPhone.Text, txtName.Text) Then
+            Me.Close()
         Else
-            MessageBox.Show("Please enter a valid username and password")
-            Return
+            MessageBox.Show("Unable to add new user")
         End If
 
 
-
-
     End Sub
+
+
+
+
+
+
+
+
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
