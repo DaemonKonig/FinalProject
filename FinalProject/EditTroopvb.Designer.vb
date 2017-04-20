@@ -30,6 +30,8 @@ Partial Class EditTroopvb
         Me.txtPhone = New System.Windows.Forms.TextBox()
         Me.btnSub = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.txtMessage = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -38,9 +40,9 @@ Partial Class EditTroopvb
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(44, 52)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(89, 20)
+        Me.Label1.Size = New System.Drawing.Size(91, 20)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "UserName"
+        Me.Label1.Text = "Username:"
         '
         'txtUser
         '
@@ -56,9 +58,9 @@ Partial Class EditTroopvb
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(44, 98)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(83, 20)
+        Me.Label2.Size = New System.Drawing.Size(88, 20)
         Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Password"
+        Me.Label2.Text = "Password:"
         '
         'txtPass
         '
@@ -74,9 +76,9 @@ Partial Class EditTroopvb
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(13, 143)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(120, 20)
+        Me.Label3.Size = New System.Drawing.Size(125, 20)
         Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Phone Number"
+        Me.Label3.Text = "Phone Number:"
         '
         'txtPhone
         '
@@ -89,7 +91,7 @@ Partial Class EditTroopvb
         'btnSub
         '
         Me.btnSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSub.Location = New System.Drawing.Point(63, 240)
+        Me.btnSub.Location = New System.Drawing.Point(223, 240)
         Me.btnSub.Name = "btnSub"
         Me.btnSub.Size = New System.Drawing.Size(81, 39)
         Me.btnSub.TabIndex = 2
@@ -99,18 +101,38 @@ Partial Class EditTroopvb
         'btnClose
         '
         Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClose.Location = New System.Drawing.Point(176, 240)
+        Me.btnClose.Location = New System.Drawing.Point(413, 240)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(81, 39)
         Me.btnClose.TabIndex = 2
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
+        'txtMessage
+        '
+        Me.txtMessage.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMessage.Location = New System.Drawing.Point(378, 32)
+        Me.txtMessage.Multiline = True
+        Me.txtMessage.Name = "txtMessage"
+        Me.txtMessage.Size = New System.Drawing.Size(203, 159)
+        Me.txtMessage.TabIndex = 3
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(374, 9)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(100, 20)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Comments: "
+        '
         'EditTroopvb
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(368, 291)
+        Me.ClientSize = New System.Drawing.Size(665, 291)
+        Me.Controls.Add(Me.txtMessage)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnSub)
         Me.Controls.Add(Me.txtPhone)
@@ -118,6 +140,7 @@ Partial Class EditTroopvb
         Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label1)
         Me.Name = "EditTroopvb"
         Me.Text = "EditTroopvb"
@@ -134,4 +157,6 @@ Partial Class EditTroopvb
     Friend WithEvents txtPhone As TextBox
     Friend WithEvents btnSub As Button
     Friend WithEvents btnClose As Button
+    Friend WithEvents txtMessage As TextBox
+    Friend WithEvents Label4 As Label
 End Class

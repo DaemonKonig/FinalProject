@@ -18,4 +18,15 @@
             MessageBox.Show("Please select the User to edit")
         End If
     End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        If dgvTroop.SelectedRows.Count > 0 Then
+            Dim UserId As Short = CShort(dgvTroop.SelectedRows(0).Cells(0).Value)
+            If mUser.Delete(UserId) Then
+                dgvTroop.DataSource = mUser.items
+            Else
+                MessageBox.Show("Unable to delete this User")
+            End If
+        End If
+    End Sub
 End Class

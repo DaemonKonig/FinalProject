@@ -178,7 +178,7 @@ Partial Class ViewMod
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(353, 12)
+        Me.btnDelete.Location = New System.Drawing.Point(334, 12)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(98, 28)
         Me.btnDelete.TabIndex = 3

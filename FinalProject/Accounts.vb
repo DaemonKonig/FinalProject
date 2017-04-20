@@ -15,7 +15,7 @@ Public Class Accounts
 
     Public Function Update(ByVal Username As String, ByVal Password As String, ByVal PhoneNumber As Integer, ByVal userId As Integer, ByVal Message As String) As Boolean
         Try
-            adapter.Update(Username, Password, PhoneNumber, userId, Message)
+            adapter.Update(Username, Password, PhoneNumber, Message, userId)
             Return True
         Catch ex As Exception
             Return False

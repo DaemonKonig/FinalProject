@@ -23,7 +23,7 @@
 
 
 
-        If mAccount.Update(txtUser.Text, txtPass.Text, txtPhone.Text, mUserId, txtUser.Text) Then
+        If mAccount.Update(txtUser.Text, txtPass.Text, CInt(txtPhone.Text), mUserId, txtMessage.Text) Then
             Me.Close()
         Else
             MessageBox.Show("Cannot Update Troop")

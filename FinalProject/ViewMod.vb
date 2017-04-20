@@ -17,7 +17,7 @@
 
 
 
-    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click, btnDelete.Click
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If dgvCookies.SelectedRows.Count > 0 Then
             Dim CookieId As Short = CShort(dgvCookies.SelectedRows(0).Cells(0).Value)
             Dim frm As New Modify
@@ -26,6 +26,18 @@
             dgvCookies.DataSource = mCookies.items
         Else
             MessageBox.Show("Please select the CookieSheet to edit")
+        End If
+    End Sub
+
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        If dgvCookies.SelectedRows.Count > 0 Then
+            Dim CookieId As Short = CShort(dgvCookies.SelectedRows(0).Cells(0).Value)
+            If mCookies.Delete(CookieId) Then
+                dgvCookies.DataSource = mCookies.items
+            Else
+                MessageBox.Show("Unable to delete this Sheet")
+            End If
         End If
     End Sub
 End Class
