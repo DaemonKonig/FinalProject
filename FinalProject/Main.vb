@@ -12,7 +12,7 @@ Public Class Main
     End Sub
 
     Private Sub tsmInvent_Click(sender As Object, e As EventArgs) Handles tsmInvent.Click
-        NewCookieSheet.ShowDialog()
+        NewInven.ShowDialog()
         NewCookie = True
     End Sub
 
@@ -53,7 +53,7 @@ Public Class Main
     End Sub
 
     Private Sub InventoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InventoryToolStripMenuItem.Click
-
+        ViewInven.ShowDialog()
     End Sub
 
     Private Sub TroopToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TroopToolStripMenuItem.Click

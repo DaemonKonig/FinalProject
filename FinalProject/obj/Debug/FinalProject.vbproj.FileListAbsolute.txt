@@ -19,3 +19,6 @@ C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debu
 C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.ViewMod.resources
 C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.EditTroopvb.resources
 C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.ViewTroop.resources
+C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.ModInven.resources
+C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.NewInven.resources
+C:\Users\Daemon\OneDrive\school\Visual studio\FinalProject\FinalProject\obj\Debug\FinalProject.ViewInven.resources

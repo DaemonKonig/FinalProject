@@ -1,7 +1,7 @@
 ﻿Public Class Inventory
     Private adapter As New GSCDataSetTableAdapters.InventoryTableAdapter
 
-    Public Function insert(ByVal UserName As Short, ByVal Scheduled As DateTime, ByVal ThinMints As Integer, ByVal caramel_deLites As Integer, ByVal PeanutButter_Patties As Integer, ByVal ShortBread As Integer, ByVal comments As String, ByVal zipcode As Integer)
+    Public Function insert(ByVal UserName As String, ByVal Scheduled As DateTime, ByVal ThinMints As Integer, ByVal caramel_deLites As Integer, ByVal PeanutButter_Patties As Integer, ByVal ShortBread As Integer, ByVal comments As String, ByVal zipcode As Integer)
         Try
             adapter.Insert(UserName, Scheduled, ThinMints, caramel_deLites, PeanutButter_Patties, ShortBread, comments, zipcode)
             Return True
@@ -22,7 +22,7 @@
         Return aDate.Add(ts)
     End Function
 
-    Public Function Update(ByVal UserName As Short, ByVal Scheduled As DateTime, ByVal ThinMints As Integer, ByVal Caramel_deLites As Integer, ByVal PeanutButter_Patties As Integer, ByVal ShortBread As Integer, ByVal comments As String, ByVal zipcode As Integer, ByVal InventoryId As Integer) As Boolean
+    Public Function Update(ByVal UserName As String, ByVal Scheduled As DateTime, ByVal ThinMints As Integer, ByVal Caramel_deLites As Integer, ByVal PeanutButter_Patties As Integer, ByVal ShortBread As Integer, ByVal comments As String, ByVal zipcode As Integer, ByVal InventoryId As Integer) As Boolean
         Try
             adapter.Update(UserName, Scheduled, ThinMints, Caramel_deLites, PeanutButter_Patties, ShortBread, comments, zipcode, InventoryId)
             Return True
@@ -35,5 +35,12 @@
         Dim rowsAffected As Integer = adapter.Delete(InventoryId)
         Return rowsAffected > 0
 
+    End Function
+
+
+    Public Function GetByInventoryId(ByVal InventoryId As Integer) As GSCDataSet.InventoryRow
+        Dim table As GSCDataSet.InventoryDataTable
+        table = adapter.GetData()
+        Return table.FindByInventoryId(InventoryId)
     End Function
 End Class

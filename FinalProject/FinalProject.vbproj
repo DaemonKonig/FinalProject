@@ -101,6 +101,12 @@
       <DependentUpon>GSCDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Inventory.vb" />
+    <Compile Include="ModInven.Designer.vb">
+      <DependentUpon>ModInven.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModInven.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NewCookieSheet.Designer.vb">
       <DependentUpon>NewCookieSheet.vb</DependentUpon>
     </Compile>
@@ -142,6 +148,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Accounts.vb" />
+    <Compile Include="NewInven.Designer.vb">
+      <DependentUpon>NewInven.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewInven.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Users.Designer.vb">
       <DependentUpon>Users.vb</DependentUpon>
     </Compile>
@@ -152,6 +164,12 @@
       <DependentUpon>View.vb</DependentUpon>
     </Compile>
     <Compile Include="View.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewInven.Designer.vb">
+      <DependentUpon>ViewInven.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewInven.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewMod.Designer.vb">
@@ -171,6 +189,9 @@
     <EmbeddedResource Include="EditTroopvb.resx">
       <DependentUpon>EditTroopvb.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModInven.resx">
+      <DependentUpon>ModInven.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewCookieSheet.resx">
       <DependentUpon>NewCookieSheet.vb</DependentUpon>
     </EmbeddedResource>
@@ -189,11 +210,17 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewInven.resx">
+      <DependentUpon>NewInven.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Users.resx">
       <DependentUpon>Users.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View.resx">
       <DependentUpon>View.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewInven.resx">
+      <DependentUpon>ViewInven.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewMod.resx">
       <DependentUpon>ViewMod.vb</DependentUpon>
