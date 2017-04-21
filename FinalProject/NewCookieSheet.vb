@@ -1,12 +1,13 @@
 ﻿Imports FinalProject.Login
 Public Class NewCookieSheet
     Private mCookies As New Cookies
-    Private Active As New Login
+
 
     Private Sub Input_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'GSCDataSet.Cookies' table. You can move, or remove it, as needed.
-        Me.CookiesTableAdapter.Fill(Me.GSCDataSet.Cookies)
-        MessageBox.Show(Active.cboUsers.ToString)
+        'TODO: This line of code loads data into the 'GSCDataSet.Accounts' table. You can move, or remove it, as needed.
+        Me.AccountsTableAdapter.Fill(Me.GSCDataSet.Accounts)
+
+
 
 
 
@@ -55,5 +56,16 @@ Public Class NewCookieSheet
 
     Private Sub lblVar_Click(sender As Object, e As EventArgs) Handles lblVar.Click
 
+    End Sub
+
+    Private Sub txtMints_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtZip.KeyPress, txtPatties.KeyPress, txtMints.KeyPress, txtCaramel.KeyPress, txtBread.KeyPress
+        If Char.IsControl(e.KeyChar) Then Exit Sub
+        Dim txt As TextBox = CType(sender, TextBox)
+
+        If Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+
+        Else Exit Sub
+        End If
     End Sub
 End Class

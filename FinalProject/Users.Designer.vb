@@ -56,6 +56,7 @@ Partial Class Users
         '
         Me.txtName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtName.Location = New System.Drawing.Point(188, 54)
+        Me.txtName.MaxLength = 20
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(100, 27)
         Me.txtName.TabIndex = 0
@@ -74,6 +75,7 @@ Partial Class Users
         '
         Me.txtPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPass.Location = New System.Drawing.Point(188, 105)
+        Me.txtPass.MaxLength = 20
         Me.txtPass.Name = "txtPass"
         Me.txtPass.Size = New System.Drawing.Size(100, 27)
         Me.txtPass.TabIndex = 1
@@ -92,6 +94,7 @@ Partial Class Users
         '
         Me.txtPhone.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPhone.Location = New System.Drawing.Point(188, 149)
+        Me.txtPhone.MaxLength = 9
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(100, 27)
         Me.txtPhone.TabIndex = 2

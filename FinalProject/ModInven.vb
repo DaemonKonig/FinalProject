@@ -68,4 +68,15 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSub.Click, btnClose.Click, btnClear.Click
 
     End Sub
+
+    Private Sub txtMints_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtZip.KeyPress, txtPatties.KeyPress, txtMints.KeyPress, txtLites.KeyPress, txtBread.KeyPress
+        If Char.IsControl(e.KeyChar) Then Exit Sub
+        Dim txt As TextBox = CType(sender, TextBox)
+
+        If Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+
+        Else Exit Sub
+        End If
+    End Sub
 End Class

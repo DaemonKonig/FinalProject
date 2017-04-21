@@ -45,9 +45,12 @@ Partial Class NewCookieSheet
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.cboUsers = New System.Windows.Forms.ComboBox()
+        Me.AccountsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GSCDataSet = New FinalProject.GSCDataSet()
         Me.CookiesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CookiesTableAdapter = New FinalProject.GSCDataSetTableAdapters.CookiesTableAdapter()
+        Me.AccountsTableAdapter = New FinalProject.GSCDataSetTableAdapters.AccountsTableAdapter()
+        CType(Me.AccountsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GSCDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CookiesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -77,6 +80,7 @@ Partial Class NewCookieSheet
         '
         Me.txtMints.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMints.Location = New System.Drawing.Point(214, 118)
+        Me.txtMints.MaxLength = 3
         Me.txtMints.Name = "txtMints"
         Me.txtMints.Size = New System.Drawing.Size(158, 27)
         Me.txtMints.TabIndex = 0
@@ -95,6 +99,7 @@ Partial Class NewCookieSheet
         '
         Me.txtBread.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBread.Location = New System.Drawing.Point(214, 241)
+        Me.txtBread.MaxLength = 3
         Me.txtBread.Name = "txtBread"
         Me.txtBread.Size = New System.Drawing.Size(158, 27)
         Me.txtBread.TabIndex = 3
@@ -143,6 +148,7 @@ Partial Class NewCookieSheet
         '
         Me.txtCaramel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCaramel.Location = New System.Drawing.Point(214, 157)
+        Me.txtCaramel.MaxLength = 3
         Me.txtCaramel.Name = "txtCaramel"
         Me.txtCaramel.Size = New System.Drawing.Size(158, 27)
         Me.txtCaramel.TabIndex = 1
@@ -162,6 +168,7 @@ Partial Class NewCookieSheet
         '
         Me.txtPatties.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPatties.Location = New System.Drawing.Point(214, 199)
+        Me.txtPatties.MaxLength = 3
         Me.txtPatties.Name = "txtPatties"
         Me.txtPatties.Size = New System.Drawing.Size(158, 27)
         Me.txtPatties.TabIndex = 2
@@ -202,6 +209,7 @@ Partial Class NewCookieSheet
         '
         Me.txtComments.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtComments.Location = New System.Drawing.Point(536, 103)
+        Me.txtComments.MaxLength = 150
         Me.txtComments.Multiline = True
         Me.txtComments.Name = "txtComments"
         Me.txtComments.Size = New System.Drawing.Size(244, 188)
@@ -230,6 +238,7 @@ Partial Class NewCookieSheet
         '
         Me.txtZip.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtZip.Location = New System.Drawing.Point(214, 338)
+        Me.txtZip.MaxLength = 6
         Me.txtZip.Name = "txtZip"
         Me.txtZip.Size = New System.Drawing.Size(158, 27)
         Me.txtZip.TabIndex = 5
@@ -258,7 +267,7 @@ Partial Class NewCookieSheet
         '
         'cboUsers
         '
-        Me.cboUsers.DataSource = Me.CookiesBindingSource
+        Me.cboUsers.DataSource = Me.AccountsBindingSource
         Me.cboUsers.DisplayMember = "UserName"
         Me.cboUsers.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboUsers.FormattingEnabled = True
@@ -267,6 +276,11 @@ Partial Class NewCookieSheet
         Me.cboUsers.Size = New System.Drawing.Size(158, 28)
         Me.cboUsers.TabIndex = 10
         Me.cboUsers.ValueMember = "UserName"
+        '
+        'AccountsBindingSource
+        '
+        Me.AccountsBindingSource.DataMember = "Accounts"
+        Me.AccountsBindingSource.DataSource = Me.GSCDataSet
         '
         'GSCDataSet
         '
@@ -281,6 +295,10 @@ Partial Class NewCookieSheet
         'CookiesTableAdapter
         '
         Me.CookiesTableAdapter.ClearBeforeFill = True
+        '
+        'AccountsTableAdapter
+        '
+        Me.AccountsTableAdapter.ClearBeforeFill = True
         '
         'NewCookieSheet
         '
@@ -311,6 +329,7 @@ Partial Class NewCookieSheet
         Me.Controls.Add(Me.btnSub)
         Me.Name = "NewCookieSheet"
         Me.Text = "New Cookie Sheet"
+        CType(Me.AccountsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GSCDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CookiesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -343,4 +362,6 @@ Partial Class NewCookieSheet
     Friend WithEvents GSCDataSet As GSCDataSet
     Friend WithEvents CookiesBindingSource As BindingSource
     Friend WithEvents CookiesTableAdapter As GSCDataSetTableAdapters.CookiesTableAdapter
+    Friend WithEvents AccountsBindingSource As BindingSource
+    Friend WithEvents AccountsTableAdapter As GSCDataSetTableAdapters.AccountsTableAdapter
 End Class

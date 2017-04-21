@@ -1,6 +1,7 @@
 ﻿Imports FinalProject.Login
 Public Class Main
-    Public NewCookie As Boolean
+    Public Active As Boolean
+
 
     Private Sub ViewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles tsmAddTrpr.Click
         Users.ShowDialog()
@@ -8,15 +9,18 @@ Public Class Main
 
     Private Sub tsmNCS_Click(sender As Object, e As EventArgs) Handles tsmNCS.Click
         NewCookieSheet.ShowDialog()
-        NewCookie = False
+
     End Sub
 
     Private Sub tsmInvent_Click(sender As Object, e As EventArgs) Handles tsmInvent.Click
         NewInven.ShowDialog()
-        NewCookie = True
+
     End Sub
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Active = False Then
+            Me.Close()
+        End If
 
 
 

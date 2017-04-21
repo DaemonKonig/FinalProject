@@ -85,6 +85,7 @@ Partial Class NewInven
         '
         Me.txtMints.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMints.Location = New System.Drawing.Point(216, 144)
+        Me.txtMints.MaxLength = 3
         Me.txtMints.Name = "txtMints"
         Me.txtMints.Size = New System.Drawing.Size(161, 27)
         Me.txtMints.TabIndex = 2
@@ -93,7 +94,7 @@ Partial Class NewInven
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(77, 44)
+        Me.Label1.Location = New System.Drawing.Point(68, 44)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(94, 20)
         Me.Label1.TabIndex = 3
@@ -131,7 +132,7 @@ Partial Class NewInven
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(118, 92)
+        Me.Label2.Location = New System.Drawing.Point(106, 92)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(50, 20)
         Me.Label2.TabIndex = 3
@@ -141,7 +142,7 @@ Partial Class NewInven
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(118, 151)
+        Me.Label3.Location = New System.Drawing.Point(106, 147)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(87, 20)
         Me.Label3.TabIndex = 3
@@ -151,6 +152,7 @@ Partial Class NewInven
         '
         Me.txtLites.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLites.Location = New System.Drawing.Point(216, 193)
+        Me.txtLites.MaxLength = 3
         Me.txtLites.Name = "txtLites"
         Me.txtLites.Size = New System.Drawing.Size(161, 27)
         Me.txtLites.TabIndex = 2
@@ -159,7 +161,7 @@ Partial Class NewInven
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(68, 196)
+        Me.Label4.Location = New System.Drawing.Point(56, 196)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(137, 20)
         Me.Label4.TabIndex = 3
@@ -169,6 +171,7 @@ Partial Class NewInven
         '
         Me.txtPatties.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPatties.Location = New System.Drawing.Point(216, 235)
+        Me.txtPatties.MaxLength = 3
         Me.txtPatties.Name = "txtPatties"
         Me.txtPatties.Size = New System.Drawing.Size(161, 27)
         Me.txtPatties.TabIndex = 2
@@ -177,7 +180,7 @@ Partial Class NewInven
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(36, 238)
+        Me.Label5.Location = New System.Drawing.Point(24, 238)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(169, 20)
         Me.Label5.TabIndex = 3
@@ -187,6 +190,7 @@ Partial Class NewInven
         '
         Me.txtBread.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBread.Location = New System.Drawing.Point(216, 277)
+        Me.txtBread.MaxLength = 3
         Me.txtBread.Name = "txtBread"
         Me.txtBread.Size = New System.Drawing.Size(161, 27)
         Me.txtBread.TabIndex = 2
@@ -195,7 +199,7 @@ Partial Class NewInven
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(106, 280)
+        Me.Label6.Location = New System.Drawing.Point(94, 280)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(99, 20)
         Me.Label6.TabIndex = 3
@@ -205,6 +209,7 @@ Partial Class NewInven
         '
         Me.txtZip.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtZip.Location = New System.Drawing.Point(216, 314)
+        Me.txtZip.MaxLength = 6
         Me.txtZip.Name = "txtZip"
         Me.txtZip.Size = New System.Drawing.Size(161, 27)
         Me.txtZip.TabIndex = 2
@@ -213,7 +218,7 @@ Partial Class NewInven
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(133, 317)
+        Me.Label7.Location = New System.Drawing.Point(121, 317)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(72, 20)
         Me.Label7.TabIndex = 3
@@ -223,6 +228,7 @@ Partial Class NewInven
         '
         Me.txtComment.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtComment.Location = New System.Drawing.Point(415, 53)
+        Me.txtComment.MaxLength = 150
         Me.txtComment.Multiline = True
         Me.txtComment.Name = "txtComment"
         Me.txtComment.Size = New System.Drawing.Size(223, 251)

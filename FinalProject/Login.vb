@@ -1,10 +1,11 @@
-﻿Imports FinalProject.Accounts
+﻿Imports FinalProject.Main
 Imports System.IO
 Public Class Login
 
 
 
-
+    Public ActiveAdmin As Boolean
+    Public ActiveUser As Boolean
 
 
 
@@ -20,13 +21,16 @@ Public Class Login
 
         If txtPass.Text = cboUsers.SelectedValue.ToString.Trim Then
 
+            Dim frmmain As New Main
+            frmmain.Active = True
+            frmmain.ShowDialog()
 
-            Main.ShowDialog()
-            Me.Close()
         Else
             MessageBox.Show("Invalid Password")
+
             Return
         End If
+        Me.Close()
 
 
     End Sub

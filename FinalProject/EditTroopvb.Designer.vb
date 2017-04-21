@@ -48,6 +48,7 @@ Partial Class EditTroopvb
         '
         Me.txtUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUser.Location = New System.Drawing.Point(157, 49)
+        Me.txtUser.MaxLength = 20
         Me.txtUser.Name = "txtUser"
         Me.txtUser.Size = New System.Drawing.Size(100, 27)
         Me.txtUser.TabIndex = 1
@@ -66,6 +67,7 @@ Partial Class EditTroopvb
         '
         Me.txtPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPass.Location = New System.Drawing.Point(157, 95)
+        Me.txtPass.MaxLength = 20
         Me.txtPass.Name = "txtPass"
         Me.txtPass.Size = New System.Drawing.Size(100, 27)
         Me.txtPass.TabIndex = 1
@@ -84,6 +86,7 @@ Partial Class EditTroopvb
         '
         Me.txtPhone.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPhone.Location = New System.Drawing.Point(157, 140)
+        Me.txtPhone.MaxLength = 9
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(100, 27)
         Me.txtPhone.TabIndex = 1
@@ -112,6 +115,7 @@ Partial Class EditTroopvb
         '
         Me.txtMessage.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMessage.Location = New System.Drawing.Point(378, 32)
+        Me.txtMessage.MaxLength = 150
         Me.txtMessage.Multiline = True
         Me.txtMessage.Name = "txtMessage"
         Me.txtMessage.Size = New System.Drawing.Size(203, 159)

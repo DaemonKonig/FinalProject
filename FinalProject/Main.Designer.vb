@@ -145,7 +145,7 @@ Partial Class Main
         Me.PictureBox1.Image = Global.FinalProject.My.Resources.Resources.searching_cookie_300x300
         Me.PictureBox1.Location = New System.Drawing.Point(140, 83)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(309, 271)
+        Me.PictureBox1.Size = New System.Drawing.Size(309, 326)
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
@@ -153,7 +153,7 @@ Partial Class Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(622, 366)
+        Me.ClientSize = New System.Drawing.Size(622, 421)
         Me.Controls.Add(Me.lblLogged)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.MenuStrip1)

@@ -129,6 +129,7 @@ Partial Class Modify
         '
         Me.txtMints.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMints.Location = New System.Drawing.Point(263, 167)
+        Me.txtMints.MaxLength = 3
         Me.txtMints.Name = "txtMints"
         Me.txtMints.Size = New System.Drawing.Size(100, 27)
         Me.txtMints.TabIndex = 1
@@ -137,6 +138,7 @@ Partial Class Modify
         '
         Me.txtLites.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLites.Location = New System.Drawing.Point(263, 218)
+        Me.txtLites.MaxLength = 3
         Me.txtLites.Name = "txtLites"
         Me.txtLites.Size = New System.Drawing.Size(100, 27)
         Me.txtLites.TabIndex = 1
@@ -145,6 +147,7 @@ Partial Class Modify
         '
         Me.txtPatties.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPatties.Location = New System.Drawing.Point(263, 268)
+        Me.txtPatties.MaxLength = 3
         Me.txtPatties.Name = "txtPatties"
         Me.txtPatties.Size = New System.Drawing.Size(100, 27)
         Me.txtPatties.TabIndex = 1
@@ -153,6 +156,7 @@ Partial Class Modify
         '
         Me.txtBread.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBread.Location = New System.Drawing.Point(263, 317)
+        Me.txtBread.MaxLength = 3
         Me.txtBread.Name = "txtBread"
         Me.txtBread.Size = New System.Drawing.Size(100, 27)
         Me.txtBread.TabIndex = 1
@@ -205,6 +209,7 @@ Partial Class Modify
         '
         Me.txtComment.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtComment.Location = New System.Drawing.Point(474, 120)
+        Me.txtComment.MaxLength = 150
         Me.txtComment.Multiline = True
         Me.txtComment.Name = "txtComment"
         Me.txtComment.Size = New System.Drawing.Size(268, 206)
@@ -245,6 +250,7 @@ Partial Class Modify
         '
         Me.txtZip.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtZip.Location = New System.Drawing.Point(263, 361)
+        Me.txtZip.MaxLength = 6
         Me.txtZip.Name = "txtZip"
         Me.txtZip.Size = New System.Drawing.Size(100, 27)
         Me.txtZip.TabIndex = 1

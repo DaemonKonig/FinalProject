@@ -99,6 +99,7 @@ Partial Class ModInven
         Me.txtMints.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMints.Location = New System.Drawing.Point(233, 133)
         Me.txtMints.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtMints.MaxLength = 2
         Me.txtMints.Name = "txtMints"
         Me.txtMints.Size = New System.Drawing.Size(126, 27)
         Me.txtMints.TabIndex = 0
@@ -130,6 +131,7 @@ Partial Class ModInven
         Me.txtLites.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLites.Location = New System.Drawing.Point(233, 178)
         Me.txtLites.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtLites.MaxLength = 2
         Me.txtLites.Name = "txtLites"
         Me.txtLites.Size = New System.Drawing.Size(126, 27)
         Me.txtLites.TabIndex = 0
@@ -150,6 +152,7 @@ Partial Class ModInven
         Me.txtPatties.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPatties.Location = New System.Drawing.Point(233, 223)
         Me.txtPatties.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPatties.MaxLength = 2
         Me.txtPatties.Name = "txtPatties"
         Me.txtPatties.Size = New System.Drawing.Size(126, 27)
         Me.txtPatties.TabIndex = 0
@@ -170,6 +173,7 @@ Partial Class ModInven
         Me.txtBread.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBread.Location = New System.Drawing.Point(233, 265)
         Me.txtBread.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtBread.MaxLength = 2
         Me.txtBread.Name = "txtBread"
         Me.txtBread.Size = New System.Drawing.Size(126, 27)
         Me.txtBread.TabIndex = 0
@@ -190,6 +194,7 @@ Partial Class ModInven
         Me.txtZip.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtZip.Location = New System.Drawing.Point(233, 312)
         Me.txtZip.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtZip.MaxLength = 6
         Me.txtZip.Name = "txtZip"
         Me.txtZip.Size = New System.Drawing.Size(126, 27)
         Me.txtZip.TabIndex = 0
@@ -210,6 +215,7 @@ Partial Class ModInven
         Me.txtComment.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtComment.Location = New System.Drawing.Point(513, 67)
         Me.txtComment.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtComment.MaxLength = 150
         Me.txtComment.Multiline = True
         Me.txtComment.Name = "txtComment"
         Me.txtComment.Size = New System.Drawing.Size(247, 257)

@@ -1,13 +1,13 @@
 ﻿Public Class NewInven
     Private mInventory As New Inventory
-    Private Active As New Login
+
 
     Private Sub Input_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'GSCDataSet.Accounts' table. You can move, or remove it, as needed.
         Me.AccountsTableAdapter.Fill(Me.GSCDataSet.Accounts)
         'TODO: This line of code loads data into the 'GSCDataSet.Cookies' table. You can move, or remove it, as needed.
 
-        MessageBox.Show(Active.cboUsers.ToString)
+
 
 
 
@@ -54,5 +54,14 @@
 
     End Sub
 
+    Private Sub txtMints_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtZip.KeyPress, txtPatties.KeyPress, txtMints.KeyPress, txtLites.KeyPress, txtBread.KeyPress
+        If Char.IsControl(e.KeyChar) Then Exit Sub
+        Dim txt As TextBox = CType(sender, TextBox)
 
+        If Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+
+        Else Exit Sub
+        End If
+    End Sub
 End Class

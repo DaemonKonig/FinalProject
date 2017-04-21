@@ -20,18 +20,11 @@ Public Class Modify
 
     End Sub
 
-    Private Sub lblModMssg_Click(sender As Object, e As EventArgs) Handles lblModMssg.Click
-
-    End Sub
-
     Private Sub btnSub_Click(sender As Object, e As EventArgs) Handles btnSub.Click
         Dim Scheduled As DateTime
-
+        Dim UserName As String = cboTrpr.SelectedValue.ToString.Trim
         Scheduled = Cookies.CombinedDateTime(dtpDate.Value.Date, CDate("12:00"))
 
-
-
-        Dim UserName As String = cboTrpr.SelectedValue.ToString.Trim
 
 
         If mCookieSheet.Update(UserName, Scheduled, txtMints.Text, txtLites.Text, txtPatties.Text, txtBread.Text, txtComment.Text, txtZip.Text, mCookieId) Then
@@ -51,5 +44,16 @@ Public Class Modify
 
     Private Sub txtClose_Click(sender As Object, e As EventArgs) Handles txtClose.Click
         Me.Close()
+    End Sub
+
+    Private Sub txtMints_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtZip.KeyPress, txtPatties.KeyPress, txtMints.KeyPress, txtLites.KeyPress, txtBread.KeyPress
+        If Char.IsControl(e.KeyChar) Then Exit Sub
+        Dim txt As TextBox = CType(sender, TextBox)
+
+        If Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+
+        Else Exit Sub
+        End If
     End Sub
 End Class
