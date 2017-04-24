@@ -1,10 +1,15 @@
 ﻿Imports FinalProject.Login
 Public Class Main
     Public Active As Boolean
-
+    Public Admin As Boolean
 
     Private Sub ViewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles tsmAddTrpr.Click
-        Users.ShowDialog()
+        If Admin = True Then
+            Users.ShowDialog()
+        Else
+            MessageBox.Show("Admin Access Only")
+        End If
+
     End Sub
 
     Private Sub tsmNCS_Click(sender As Object, e As EventArgs) Handles tsmNCS.Click
@@ -13,7 +18,12 @@ Public Class Main
     End Sub
 
     Private Sub tsmInvent_Click(sender As Object, e As EventArgs) Handles tsmInvent.Click
-        NewInven.ShowDialog()
+        If Admin = True Then
+            NewInven.ShowDialog()
+        Else
+            MessageBox.Show("Admin Access Only")
+        End If
+
 
     End Sub
 
@@ -30,17 +40,12 @@ Public Class Main
         View.ShowDialog()
     End Sub
 
-    Private Sub tsmViewTrp_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub tsmChangeCS_Click(sender As Object, e As EventArgs)
-        Modify.ShowDialog()
-
-    End Sub
-
-    Private Sub tsmChangeTrpr_Click(sender As Object, e As EventArgs)
-        Modify.ShowDialog()
+        If Admin = True Then
+            Modify.ShowDialog()
+        Else
+            MessageBox.Show("Admin Access Only")
+        End If
 
     End Sub
 
@@ -48,19 +53,28 @@ Public Class Main
         Me.Close()
     End Sub
 
-    Private Sub lblLogged_Click(sender As Object, e As EventArgs) Handles lblLogged.Click
-
-    End Sub
-
     Private Sub CookiesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CookiesToolStripMenuItem.Click
-        ViewMod.ShowDialog()
+        If Admin = True Then
+            ViewMod.ShowDialog()
+        Else
+            MessageBox.Show("Admin Access Only")
+        End If
     End Sub
 
     Private Sub InventoryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InventoryToolStripMenuItem.Click
-        ViewInven.ShowDialog()
+        If Admin = True Then
+            ViewInven.ShowDialog()
+        Else
+            MessageBox.Show("Admin Access Only")
+        End If
+
     End Sub
 
     Private Sub TroopToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TroopToolStripMenuItem.Click
-        ViewTroop.ShowDialog()
+        If Admin = True Then
+            ViewTroop.ShowDialog()
+        Else
+            MessageBox.Show("Admin Access Only")
+        End If
     End Sub
 End Class

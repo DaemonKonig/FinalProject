@@ -20,13 +20,17 @@ Public Class Login
     Private Sub btnLog_Click(sender As Object, e As EventArgs) Handles btnLog.Click
 
         If txtPass.Text = cboUsers.SelectedValue.ToString.Trim Then
-
+            If cboUsers.Text = "Admin" Then
+                Dim frmAdmin As New Main
+                frmAdmin.Admin = True
+            End If
             Dim frmmain As New Main
-            frmmain.Active = True
-            frmmain.ShowDialog()
+                frmmain.Active = True
+                frmmain.ShowDialog()
 
-        Else
-            MessageBox.Show("Invalid Password")
+            Else
+
+                MessageBox.Show("Invalid Password")
 
             Return
         End If
