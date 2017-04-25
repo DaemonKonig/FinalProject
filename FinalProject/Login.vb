@@ -18,14 +18,13 @@ Public Class Login
     End Sub
 
     Private Sub btnLog_Click(sender As Object, e As EventArgs) Handles btnLog.Click
-
+        Dim frmmain As New Main
         If txtPass.Text = cboUsers.SelectedValue.ToString.Trim Then
-            If cboUsers.Text = "Admin" Then
-                Dim frmAdmin As New Main
-                frmAdmin.Admin = True
+            If cboUsers.Text.ToString.Trim = "Admin" Then
+                frmmain.Admin = True
             End If
-            Dim frmmain As New Main
-                frmmain.Active = True
+
+            frmmain.Active = True
                 frmmain.ShowDialog()
 
             Else
